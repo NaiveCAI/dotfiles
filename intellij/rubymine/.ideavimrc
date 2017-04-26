@@ -1,0 +1,3 @@
+imap jk <ESC>
+nmap <Leader>nl :nohl<cr>
+set relativenumber

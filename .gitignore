@@ -1,0 +1,6 @@
+.netrwhist
+.gitconfig
+*.swp
+*.bak
+tags
+.DS_Store
