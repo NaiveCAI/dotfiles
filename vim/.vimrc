@@ -49,6 +49,7 @@ set completeopt=menu,preview
 set wildmode=longest,list:longest
 
 set iskeyword=@,48-57,_,-,!,?,192-255
+
 filetype on
 filetype indent on
 filetype plugin on
@@ -403,6 +404,8 @@ if has("gui_macvim")
   nnoremap ∆ :resize -3<cr>
   "nnoremap ∆ <C-W>-
   nnoremap ≠ <C-W>=
+  "hightlight current word but don't jump
+  nnoremap <C-F> *``
 
   "TODO: Get current file type as variable, then add it to commandline.
   nnoremap <Leader>ds :Dash <C-R><C-A> 
@@ -437,14 +440,12 @@ let g:badwolf_html_link_underline=0
 "Turn on CSS properties highlighting
 let g:badwolf_css_props_highlight=1
 
-
 "conf for Gruvbox color theme
 let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='soft'
 
 "conf for Jellybeans
 let g:jellybeans_use_term_italics=1
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
