@@ -50,7 +50,12 @@ ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
 ```
 
 
-## Other
+## Other useful plugin in terminal
 - brew install tree
 - brew install htop
+- brew install tig        - another alternative for git command to show git tree in terminal
+- brew install mosh
+- brew install fzf        - a blur search plugin in terminal, pretty like the ctrlp plugin in vim
+- brew install PathPicker - file path picker use it with git is sweet
+  > git diff HEAD~8 --stat | fpp
 - brew install cmatrix
