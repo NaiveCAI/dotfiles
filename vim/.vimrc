@@ -176,15 +176,19 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=1
-"using rubocop for syntax check instead
+let g:syntastic_mode_map = { "mode": "passive" }
+
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec='~/.rvm/rubies/ruby-2.3.0/bin/ruby'
+"using rubocop for syntax check instead
 "let g:syntastic_ruby_checkers=['rubocop']
 "let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.3.0/gems/rubocop-0.48.1/bin/rubocop'
+
+let g:syntastic_javascript_checkers=['eslint']
 "using JSHint instead
 "let g:syntastic_javascript_checkers=['jsxhint']
 "let g:syntastic_javascript_jsxhint_exec='jsx-jshint-wrapper'
-let g:syntastic_javascript_checkers=['eslint']
+"
 let g:syntastic_html_tidy_quiet_messages={ "level": "warnings" }
 "let g:syntastic_html_tidy_ignore_errors=[ '<input> proprietary attribute "role"', '<input> proprietary attribute "min"' ]
 let g:syntastic_error_symbol="✘"
