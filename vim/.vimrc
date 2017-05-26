@@ -12,7 +12,7 @@ set bs=2                    "在insert模式下用退格键删除
 set showmatch               "代码匹配
 set laststatus=2            "总是显示状态行
 set showtabline=0
-set linespace=1
+set linespace=2
 set nobackup
 set nocompatible
 
@@ -445,8 +445,8 @@ let g:badwolf_html_link_underline=0
 let g:badwolf_css_props_highlight=1
 
 "conf for Gruvbox color theme
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_contrast_light='soft'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 
 "conf for Jellybeans
 let g:jellybeans_use_term_italics=1
