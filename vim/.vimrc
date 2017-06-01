@@ -59,7 +59,7 @@ if has("gui_macvim")
   colorscheme gruvbox              "macvim_theme_theme
 " "let g:airline_theme='hybrid'    "macvim_airline_theme
   set transparency=5
-  set guifont=Source\ Code\ Pro:h10
+  set guifont=Source\ Code\ Pro:h12
   "set guifont=Source\ Code\ Pro\ for\ Powerline:h10
 
   "Hide toolbar and scrollbars in MacVim
@@ -399,13 +399,13 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 "for change window size manually
 if has("gui_macvim")
-  nnoremap ¬ :vertical resize +3<cr>
+  nnoremap ¬ :vertical resize +6<cr>
   "nnoremap ¬ <C-W>>
-  nnoremap ˙ :vertical resize -3<cr>
+  nnoremap ˙ :vertical resize -6<cr>
   "nnoremap ˙ <c-w><
-  nnoremap ˚ :resize +3<cr>
+  nnoremap ˚ :resize +6<cr>
   "nnoremap ˚ <C-W>+
-  nnoremap ∆ :resize -3<cr>
+  nnoremap ∆ :resize -6<cr>
   "nnoremap ∆ <C-W>-
   nnoremap ≠ <C-W>=
   "hightlight current word but don't jump
