@@ -15,6 +15,7 @@ set showtabline=0
 set linespace=2
 set nobackup
 set nocompatible
+set clipboard=unnamed
 
 set autoindent
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
