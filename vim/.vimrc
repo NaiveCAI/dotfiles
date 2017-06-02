@@ -57,8 +57,8 @@ filetype plugin on
 
 if has("gui_macvim")
   set lines=55 columns=230
-  colorscheme sierra              "macvim_theme_theme
- "let g:airline_theme='sierra'    "macvim_airline_theme
+  colorscheme gruvbox              "macvim_theme_theme
+" "let g:airline_theme='sierra'    "macvim_airline_theme
   set transparency=5
   set guifont=Source\ Code\ Pro:h12
   "set guifont=Source\ Code\ Pro\ for\ Powerline:h10
@@ -452,7 +452,6 @@ let g:gruvbox_contrast_light='hard'
 
 "conf for sierra color theme
 let g:sierra_Campfire = 1
-colorscheme sierra 
 
 "conf for Jellybeans
 let g:jellybeans_use_term_italics=1
