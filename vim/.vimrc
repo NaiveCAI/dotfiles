@@ -56,8 +56,8 @@ filetype plugin on
 
 if has("gui_macvim")
   set lines=55 columns=230
-  colorscheme gruvbox              "macvim_theme_theme
-" "let g:airline_theme='hybrid'    "macvim_airline_theme
+  colorscheme sierra              "macvim_theme_theme
+ "let g:airline_theme='sierra'    "macvim_airline_theme
   set transparency=5
   set guifont=Source\ Code\ Pro:h12
   "set guifont=Source\ Code\ Pro\ for\ Powerline:h10
@@ -290,6 +290,7 @@ let g:UltiSnipsEditSplit='vertical'
 "conf for tagbar
 let g:tagbar_autofocus = 1
 
+
 "for ruby, delete if you do not need
 let g:tagbar_type_ruby = {
     \ 'kinds' : [
@@ -433,7 +434,7 @@ nmap <C-]> :call FollowTag()<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"olor themes conf
+"color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Badwolf color theme
 "Make the tab line the same color as the background. These values can be set. [0, 1, 2, 3]
@@ -447,6 +448,10 @@ let g:badwolf_css_props_highlight=1
 "conf for Gruvbox color theme
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
+
+"conf for sierra color theme
+let g:sierra_Campfire = 1
+colorscheme sierra 
 
 "conf for Jellybeans
 let g:jellybeans_use_term_italics=1
