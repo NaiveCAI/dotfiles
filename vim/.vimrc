@@ -119,6 +119,7 @@ let g:ctrlsf_mapping={
       \ "openb": "",
       \}
 let g:ctrlsf_ignore_dir = ['bower_components', 'npm_modules', 'tmp', 'log', 'tags']
+let g:ctrlsf_context = '-B 6 -A 6'
 
 
 "conf for ag
@@ -447,8 +448,8 @@ let g:badwolf_html_link_underline=0
 let g:badwolf_css_props_highlight=1
 
 "conf for Gruvbox color theme
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+"let g:gruvbox_contrast_dark='hard'
+"let g:gruvbox_contrast_light='hard'
 
 "conf for sierra color theme
 let g:sierra_Campfire = 1
