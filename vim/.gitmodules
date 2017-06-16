@@ -92,9 +92,6 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors
-[submodule "bundle/vim-haml"]
-	path = bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
 [submodule "bundle/ruby-matchit"]
 	path = bundle/ruby-matchit
 	url = https://github.com/vim-scripts/ruby-matchit
