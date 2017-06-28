@@ -36,6 +36,7 @@ set hls                     "检索时高亮显示匹配项
 set foldcolumn=1
 set foldlevel=3
 set foldmethod=indent       "代码折叠
+autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 
 set matchtime=1             "匹配括号高亮时间（十分之一秒）
 set lazyredraw              "buffer screen updates instead of updating all the time
@@ -148,9 +149,9 @@ let g:ycm_collect_identifiers_from_tags_files=0
 
 
 "conf for gem-ctags search all gems
-autocmd FileType ruby let &l:tags=pathogen#legacyjoin(pathogen#uniq(
-      \ pathogen#split(&tags) +
-      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+"autocmd FileType ruby let &l:tags=pathogen#legacyjoin(pathogen#uniq(
+"      \ pathogen#split(&tags) +
+"      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 
 "conf for golang
