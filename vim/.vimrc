@@ -61,7 +61,7 @@ if has("gui_macvim")
   colorscheme gruvbox              "macvim_theme_theme
 " "let g:airline_theme='sierra'    "macvim_airline_theme
   set transparency=5
-  set guifont=Source\ Code\ Pro:h12
+  set guifont=Source\ Code\ Pro:h10
   "set guifont=Source\ Code\ Pro\ for\ Powerline:h10
 
   "Hide toolbar and scrollbars in MacVim

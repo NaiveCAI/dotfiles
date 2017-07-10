@@ -15,6 +15,7 @@ alias gs='git status'
 alias gpum='git pull origin master'
 alias gpsm='git push origin master'
 alias gc-='git checkout -'
+alias gmisc="git add . && git commit -m 'MISC - Update.'"
 
 alias rs='rails s'
 alias rc='rails c'
@@ -22,6 +23,9 @@ alias rsb='rails s -b 0.0.0.0'
 alias rs1='rails s -p 3001'
 alias rs2='rails s -p 3002'
 alias rr='rake routes |grep'
+
+alias babel='./node_modules/babel-cli/bin/babel.js'
+alias babel-node='./node_modules/babel-cli/bin/babel-node.js'
 
 alias update_vim='cd ~/.vim && git submodule foreach git pull origin master'
 alias stree='open -a SourceTree .'
