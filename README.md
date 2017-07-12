@@ -19,6 +19,11 @@ brew install autojump
 ```
 
 ## Set up vim
+- Python is prerequisite for three of my vim plugins.
+  1. YouCompleteMe requires Vim compiled with Python (2.6+ or 3.3+) support.
+  2. MatchTagAlways requires python.
+  3. UltiSnips requires py >= 2.7 or py3
+
 #### Install
 ```
 brew install ack    // for ctrlsf and ack.vim
@@ -30,15 +35,36 @@ brew install CMake  // for install YCM
 cd && git clone git@github.com:NaiveCAI/dotfiles.git
 cd && git clone git@github.com:NaiveCAI/vim.git && mv vim .vim
 ```
-#### Then create links
+#### Create links
 ```
 ln -sf ~/dotfiles/vim/.gitmodules ~/.vim/.gitmodules
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme
 ```
-#### Then init vim git submodules
+#### Init vim git submodules
 ```
 git submodule update --init --recursive
+```
+
+## Set up neovim
+#### Install
+```
+brew install neovim
+```
+
+#### Install python dependency
+```
+pip2 install --user neovim
+or
+pip3 install --user neovim
+```
+
+#### Create links
+```
+mkdir -p ~/.config/nvim
+ln -sf ~/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
+ln -sf ~/.vim/bundle ~/.config/nvim/bundle
 ```
 
 ## Set rails conf for vim
@@ -59,7 +85,7 @@ ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
 - brew install cmatrix
 
 
-# Fuck gfw using shadowsocksNG with privoxy
+# Fuck GongFei's gfw using shadowsocksNG with privoxy
 ```
 brew install privoxy
 brew services start privoxy
