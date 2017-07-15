@@ -16,6 +16,7 @@ set linespace=2
 set nobackup
 set nocompatible
 set clipboard=unnamed
+set background=dark
 
 set autoindent
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
@@ -56,36 +57,36 @@ filetype on
 filetype indent on
 filetype plugin on
 
+"Specific configurations
 if has("gui_macvim")
-  set lines=55 columns=230
-  colorscheme gruvbox              "macvim_theme_theme
-" "let g:airline_theme='sierra'    "macvim_airline_theme
+  set lines=50 columns=220
   set transparency=5
+  let g:airline_powerline_fonts=1
   set guifont=Source\ Code\ Pro:h10
-  "set guifont=Source\ Code\ Pro\ for\ Powerline:h10
-
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
+endif
 
-  noremap <C-Tab> :tabnext<CR>
-  noremap <C-S-Tab> :tabprev<CR>
+if has("gui_vimr")
+  "To keey consistent with the macvim's <C-6>
+  noremap <C-6> <C-S-6>
+endif
 
-  let g:airline_powerline_fonts=1
+if has("gui_macvim") || has("gui_vimr")
+  colorscheme gruvbox              "macvim_theme_theme
+  "let g:airline_theme='sierra'    "macvim_airline_theme
+  set termguicolors
   highlight Comment gui=italic
-
 elseif has("gui_running")
   set lines=40 columns=160
   set guifont=yahei\ consolas\ hybrid\ 9
-
 elseif has("gui_win32")
   set guifont=YaHei\ Consolas\ Hybrid:h10
-
 else
   colorscheme gruvbox
-  set background=dark
   set fillchars+=vert:\|
 end
 
@@ -370,12 +371,15 @@ nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
 nmap <Leader>t :Tab /
 nmap <F10> :BufOnly<cr>
+
 "for macvim's sb screen bug
 nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
+
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
 nmap <F3> <Plug>CtrlSFCwordExec
 nmap <F5> :GundoToggle<CR>
+
 "for fugitive
 nmap <Leader>gpu :Gpull 
 nmap <Leader>gps :Gpush 
@@ -383,26 +387,33 @@ nmap <Leader>gco :Gcommit
 nmap <Leader>gb :Gblame<cr>
 nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gd :Gvdiff<cr>
+
 "for highlightedyank
 map y <Plug>(highlightedyank)
+
 "for split screen
 nmap <Leader>vs :vsplit<cr>
 nmap <Leader>sp :split<cr>
+
 "for switch bg color
 nmap <Leader>bgl :set background=light<cr>
 nmap <Leader>bgd :set background=dark<cr>
+
 "for rails.vim
 nmap <Leader>rg :Rgenerate 
 nmap <Leader>rd :Rdestroy 
+
 "for tagbar
 nmap <Leader>tt :TagbarToggle<cr>
+
 "for move cursor between windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-"for change window size manually
-if has("gui_macvim")
+
+"for change window size manually in OS X
+if has("gui_vimr") || has("gui_macvim")
   nnoremap ¬ :vertical resize +6<cr>
   "nnoremap ¬ <C-W>>
   nnoremap ˙ :vertical resize -6<cr>
@@ -412,18 +423,23 @@ if has("gui_macvim")
   nnoremap ∆ :resize -6<cr>
   "nnoremap ∆ <C-W>-
   nnoremap ≠ <C-W>=
-  "hightlight current word but don't jump
-  nnoremap <C-F> *``
-
-  "TODO: Get current file type as variable, then add it to commandline.
-  nnoremap <Leader>ds :Dash <C-R><C-A> 
 endif
+
+"TODO: Get current file type as variable, then add it to commandline.
+nnoremap <Leader>ds :Dash <C-R><C-A> 
+
+"use CTRL and TAB to switch between tabs.
+noremap <C-Tab> :tabnext<CR>
+noremap <C-S-Tab> :tabprev<CR>
+
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
+
 "for macvim clipboard
 vmap "+y :w !pbcopy<cr><cr> 
 nmap "+p :r !pbpaste<cr><cr>
+
 "for ctags
 function! FollowTag()
   if !exists("w:tagbrowse")
@@ -432,6 +448,7 @@ function! FollowTag()
   endif
   execute "tag " . expand("<cword>")
 endfunction
+
 nmap <C-]> :call FollowTag()<cr>
 "nmap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 
