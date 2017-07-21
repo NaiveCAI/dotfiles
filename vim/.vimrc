@@ -62,7 +62,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   set transparency=5
   let g:airline_powerline_fonts=1
-  set guifont=Source\ Code\ Pro:h10
+  set guifont=Source\ Code\ Pro:h12
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
