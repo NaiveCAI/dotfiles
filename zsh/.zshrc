@@ -73,11 +73,11 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 # Dynamically change vim theme
 # TODO: Refactor this function to a file -- .zsh_functions
 #
-change_vim_theme() {
-  # autoload +X change_vim_theme
-  time=$(date +"%T")
-  hour=${time:0:2}
-  themes=(kalisi gruvbox hybrid solarized)
-  seed=$(($RANDOM%4))
-  zsh -c "change_vim_theme.sh $themes[$seed]"
-}
+# change_vim_theme() {
+#   # autoload +X change_vim_theme
+#   time=$(date +"%T")
+#   hour=${time:0:2}
+#   themes=(kalisi gruvbox hybrid solarized)
+#   seed=$(($RANDOM%4))
+#   zsh -c "change_vim_theme.sh $themes[$seed]"
+# }

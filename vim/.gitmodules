@@ -226,3 +226,6 @@
 [submodule "bundle/vim-wordy"]
 	path = bundle/vim-wordy
 	url = https://github.com/reedes/vim-wordy.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git

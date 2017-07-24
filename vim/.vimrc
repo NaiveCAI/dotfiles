@@ -27,7 +27,7 @@ set cursorcolumn            "highlight current column
 set selection=exclusive
 set selectmode=mouse,key
 
-set relativenumber
+"set relativenumber
 set nu
 set autoread                "文件在Vim之外修改过，自动重新读入
 "set autowrite              "切换buffer前保存内容
@@ -165,10 +165,11 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 "conf for airline
 let g:airline#extensions#bufferline#enabled=1
 let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#branch#enabled=1
+let g:airline#extensions#ale#enabled=1
+"let g:airline#extensions#syntastic#enabled=1
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
-let g:airline#extensions#branch#enabled=1
-let g:airline#extensions#syntastic#enabled=1
 
 
 "conf for syntastic
@@ -192,11 +193,15 @@ let g:syntastic_javascript_checkers=['eslint']
 "using JSHint instead
 "let g:syntastic_javascript_checkers=['jsxhint']
 "let g:syntastic_javascript_jsxhint_exec='jsx-jshint-wrapper'
-"
+
 let g:syntastic_html_tidy_quiet_messages={ "level": "warnings" }
 "let g:syntastic_html_tidy_ignore_errors=[ '<input> proprietary attribute "role"', '<input> proprietary attribute "min"' ]
 let g:syntastic_error_symbol="✘"
 let g:syntastic_warning_symbol="▷"
+
+
+"conf for ale - Asynchronous Lint Engine
+
 
 
 "conf for js-libraries-syntax
