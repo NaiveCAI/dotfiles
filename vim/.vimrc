@@ -201,7 +201,9 @@ let g:syntastic_warning_symbol="▷"
 
 
 "conf for ale - Asynchronous Lint Engine
-
+let g:ale_linters = {
+      \   'ruby': ['ruby'],
+      \}
 
 
 "conf for js-libraries-syntax
