@@ -16,6 +16,7 @@ alias gpum='git pull origin master'
 alias gpsm='git push origin master'
 alias gc-='git checkout -'
 alias gmisc="git add . && git commit -m 'MISC - Update.'"
+alias gamm="git add . && git commit --amend --date='now'"
 
 alias rs='rails s'
 alias rc='rails c'

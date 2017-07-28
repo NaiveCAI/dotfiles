@@ -365,7 +365,6 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for other key maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let mapleader="\."
 imap jk <ESC>
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
@@ -376,7 +375,6 @@ nmap <Leader>ss :so ~/.vimrc<cr>
 nmap <Leader>t :Tab /
 nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
-nmap <Leader>t :Tab /
 nmap <F10> :BufOnly<cr>
 
 "for macvim's sb screen bug
@@ -385,6 +383,7 @@ nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
 nmap <F3> <Plug>CtrlSFCwordExec
+nmap <F4> :!rspec %<CR>
 nmap <F5> :GundoToggle<CR>
 
 "for fugitive
