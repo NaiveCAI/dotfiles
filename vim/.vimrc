@@ -2,6 +2,8 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
 
+let hostname=substitute(system('hostname'), '\n', '', '')
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "common conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,8 +63,12 @@ filetype plugin on
 if has("gui_macvim")
   set lines=50 columns=220
   set transparency=5
+  if hostname == "TracydeiMac.local"
+    set guifont=Source\ Code\ Pro:h12
+  elseif
+    " TODO: for mbp
+  endif
   let g:airline_powerline_fonts=1
-  set guifont=Source\ Code\ Pro:h12
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -365,7 +371,7 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for other key maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap jk <ESC>
+imap jk <esc>
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
 nmap mf :NERDTreeFind<cr>
