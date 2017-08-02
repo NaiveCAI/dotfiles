@@ -63,10 +63,11 @@ filetype plugin on
 if has("gui_macvim")
   set lines=50 columns=220
   set transparency=5
-  if hostname == "TracydeiMac.local"
+  if hostname == "TracyEkohe"
     set guifont=Source\ Code\ Pro:h12
-  elseif
+  elseif hostname == 'NaiveCAI'
     " TODO: for mbp
+    set guifont=Source\ Code\ Pro:h10
   endif
   let g:airline_powerline_fonts=1
   "Hide toolbar and scrollbars in MacVim
