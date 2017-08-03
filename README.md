@@ -72,7 +72,10 @@ ln -sf ~/.vim/bundle ~/.config/nvim/bundle
 gem install gem-ctags
 gem ctags
 ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
+
+ln -sf ~/dotfiles/ruby/.pryrc ~/.pryrc
 ```
+
 
 ## Other useful plugin in terminal
 - brew install tree
