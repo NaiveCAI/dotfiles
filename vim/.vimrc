@@ -61,13 +61,14 @@ filetype plugin on
 
 "Specific configurations
 if has("gui_macvim")
-  set lines=50 columns=220
   set transparency=5
+  set lines=50 columns=220
   if hostname == "TracyEkohe"
     set guifont=Source\ Code\ Pro:h12
+    set lines=55 columns=230
   elseif hostname == 'NaiveCAI'
-    " TODO: for mbp
     set guifont=Source\ Code\ Pro:h10
+    set lines=50 columns=220
   endif
   let g:airline_powerline_fonts=1
   "Hide toolbar and scrollbars in MacVim
@@ -372,7 +373,7 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for other key maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap jk <esc>
+inoremap jk <ESC>
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
 nmap mf :NERDTreeFind<cr>
