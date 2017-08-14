@@ -383,6 +383,7 @@ nmap <Leader>ss :so ~/.vimrc<cr>
 nmap <Leader>t :Tab /
 nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
+nmap <Leader>sss :set syntax=
 nmap <F10> :BufOnly<cr>
 
 "for macvim's sb screen bug
