@@ -33,17 +33,12 @@ brew install CMake  // for install YCM
 #### Clone repos
 ```
 cd && git clone git@github.com:NaiveCAI/dotfiles.git
-cd && git clone git@github.com:NaiveCAI/vim.git && mv vim .vim
 ```
 #### Create links
 ```
-ln -sf ~/dotfiles/vim/.gitmodules ~/.vim/.gitmodules
+mkdir ~/.vim
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme
-```
-#### Init vim git submodules
-```
-git submodule update --init --recursive
 ```
 
 ## Set up neovim

@@ -1,8 +1,76 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-Helptags
-
 let hostname=substitute(system('hostname'), '\n', '', '')
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'w0rp/ale'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'kien/ctrlp.vim'
+Plugin 'dyng/ctrlsf.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'sjl/gundo.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'junegunn/limelight.vim'
+Plugin 'mtth/locate.vim'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'scrooloose/nerdtree'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'vim-scripts/ruby-matchit'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'SirVer/ultisnips'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-commentary'
+Plugin 'blueyed/vim-diminactive'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'xolox/vim-easytags'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+Plugin 'NaiveCAI/vim-kalisi'
+Plugin 'xolox/vim-misc'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
+Plugin 'posva/vim-vue'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'reedes/vim-wordy'
+Plugin 'pbrisbin/vim-mkdir'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'yonchu/accelerated-smooth-scroll'
+
+call vundle#end()
+
+filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "common conf
@@ -17,7 +85,8 @@ set showtabline=0
 set linespace=2
 set nobackup
 set nocompatible
-set clipboard=unnamed
+"This could be an inconvenience in some cases where you are storing something else in the clipboard as it will override it.
+"set clipboard=unnamed
 set background=dark
 
 set autoindent
@@ -32,7 +101,7 @@ set selectmode=mouse,key
 "set relativenumber
 set nu
 set autoread                "文件在Vim之外修改过，自动重新读入
-"set autowrite              "切换buffer前保存内容
+set autowrite               "切换buffer前保存内容
 set ignorecase smartcase    "检索时不忽略大小写
 set hls                     "检索时高亮显示匹配项
 
@@ -55,7 +124,9 @@ set wildmode=longest,list:longest
 
 set iskeyword=@,48-57,_,-,!,?,192-255
 
-filetype on
+"Try to fix jk map error: Quickly time out on keycodes, but never time out on mappings
+set notimeout ttimeout ttimeoutlen=200
+
 filetype indent on
 filetype plugin on
 
@@ -498,6 +569,8 @@ let g:jellybeans_use_term_italics=1
 au BufRead,BufNewFile *.rabl setf ruby
 "for es6 syntax
 au BufRead,BufNewFile *.es6 setf javascript
+"for slim syntax
+au BufRead,BufNewFile *.slim setf haml
 "for ionic
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 "close the netrw at vim startup
