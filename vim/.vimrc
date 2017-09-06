@@ -214,12 +214,6 @@ let g:bufExplorerSplitRight=1     "Split right.
 let g:bufExplorerVertSize=30      "New split windows size set by Vim.
 
 
-"conf for ruby-runner
-let g:RubyRunner_key='<Leader>r'
-let g:RubyRunner_open_below=1
-let g:RubyRunner_window_size=15
-
-
 "conf for easytags
 set tags=./tags;
 let g:easytags_async=1
@@ -252,31 +246,31 @@ let g:airline#extensions#ale#enabled=1
 
 
 "conf for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
-let g:syntastic_check_on_open=1
-let g:syntastic_check_on_wq=1
-let g:syntastic_mode_map = { "mode": "passive" }
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list=1
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_loc_list_height=5
+" let g:syntastic_check_on_open=1
+" let g:syntastic_check_on_wq=1
+" let g:syntastic_mode_map = { "mode": "passive" }
 
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_exec='~/.rvm/rubies/ruby-2.3.0/bin/ruby'
+" let g:syntastic_ruby_checkers = ['mri']
+" let g:syntastic_ruby_mri_exec='~/.rvm/rubies/ruby-2.3.0/bin/ruby'
 "using rubocop for syntax check instead
 "let g:syntastic_ruby_checkers=['rubocop']
 "let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.3.0/gems/rubocop-0.48.1/bin/rubocop'
 
-let g:syntastic_javascript_checkers=['eslint']
+" let g:syntastic_javascript_checkers=['eslint']
 "using JSHint instead
 "let g:syntastic_javascript_checkers=['jsxhint']
 "let g:syntastic_javascript_jsxhint_exec='jsx-jshint-wrapper'
 
-let g:syntastic_html_tidy_quiet_messages={ "level": "warnings" }
+" let g:syntastic_html_tidy_quiet_messages={ "level": "warnings" }
 "let g:syntastic_html_tidy_ignore_errors=[ '<input> proprietary attribute "role"', '<input> proprietary attribute "min"' ]
-let g:syntastic_error_symbol="✘"
-let g:syntastic_warning_symbol="▷"
+" let g:syntastic_error_symbol="✘"
+" let g:syntastic_warning_symbol="▷"
 
 
 "conf for ale - Asynchronous Lint Engine
@@ -312,8 +306,8 @@ let g:indentLine_color_term=239
 let g:indentLine_color_gui='#86827f'
 let g:indentLine_char='¦'
 "none X terminal
-let g:indentLine_color_tty_light=7 " (default: 4)
-let g:indentLine_color_dark=1 " (default: 2)
+let g:indentLine_color_tty_light=7 "(default: 4)
+let g:indentLine_color_dark=1 "(default: 2)
 
 
 "con for limelight
@@ -336,36 +330,10 @@ let g:limelight_eop='\ze\n^\s'
 "let g:limelight_priority=-1"
 
 
-"conf for rainbow
-let g:rainbow_active=1                       "0 if you want to enable it later via :RainbowToggle
-let g:rainbow_conf={
-      \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-      \   'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-      \   'operators': '_,_',
-      \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-      \   'separately': {
-      \       '*': {},
-      \       'tex': {
-      \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-      \       },
-      \       'lisp': {
-      \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-      \       },
-      \       'vim': {
-      \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-      \       },
-      \       'css': 0,
-      \   }
-      \}
-" \       'html': {
-" \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-" \       },
-
-
 "conf for YouCompleteMe
-let g:ycm_auto_trigger=1
-let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+"let g:ycm_auto_trigger=1
+"let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+"let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
 "let g:ycm_key_list_select_completion=['<tab>', '<Down>']
 "let g:ycm_key_list_previous_completion=['<s-tab>', '<Up>']
 
@@ -465,6 +433,19 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+
+"conf for vim-multiple-cursors
+"Fix insert mode conflict with neocomplete plugin
+function! Multiple_cursors_before()
+    exe 'NeoCompleteLock'
+    echo 'Disabled autocomplete'
+endfunction
+
+function! Multiple_cursors_after()
+    exe 'NeoCompleteUnlock'
+    echo 'Enabled autocomplete'
+endfunction
 
 
 "conf for gundo
@@ -599,6 +580,12 @@ nmap <Leader>hf :Limelight!<cr>
 "for macvim clipboard
 vmap "+y :w !pbcopy<cr><cr> 
 nmap "+p :r !pbpaste<cr><cr>
+
+"for vim wordy
+noremap <silent> <F8> :<C-u>NextWordy<cr>
+xnoremap <silent> <F8> :<C-u>NextWordy<cr>
+inoremap <silent> <F8> <C-o>:NextWordy<cr>
+
 
 "for ctags
 function! FollowTag()
