@@ -82,7 +82,6 @@ set bs=2                    "在insert模式下用退格键删除
 set showmatch               "代码匹配
 set laststatus=2            "总是显示状态行
 set showtabline=0
-set linespace=2
 set nobackup
 set nocompatible
 "This could be an inconvenience in some cases where you are storing something else in the clipboard as it will override it.
@@ -134,12 +133,15 @@ filetype plugin on
 if has("gui_macvim")
   set transparency=5
   set lines=50 columns=220
+  "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set guifont=Source\ Code\ Pro:h12
     set lines=55 columns=230
+    set guifont=OperatorMono\ Nerd\ Font:h13
+    set linespace=2
   elseif hostname == 'NaiveCAI'
-    set guifont=Source\ Code\ Pro:h10
-    set lines=50 columns=220
+    set lines=50 columns=200
+    set guifont=OperatorMono\ Nerd\ Font:h11
+    set linespace=0
   endif
   let g:airline_powerline_fonts=1
   "Hide toolbar and scrollbars in MacVim
