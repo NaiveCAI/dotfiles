@@ -64,6 +64,7 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'yonchu/accelerated-smooth-scroll'
+Plugin 'slim-template/vim-slim'
 
 call vundle#end()
 
@@ -135,7 +136,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=55 columns=230
+    set lines=58 columns=235
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
@@ -520,7 +521,7 @@ nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
 nmap <F3> <Plug>CtrlSFCwordExec
-nmap <F4> :!rspec %<CR>
+nmap <F4> :!rspec % --no-color<CR>
 nmap <F5> :GundoToggle<CR>
 
 "for fugitive

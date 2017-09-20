@@ -33,7 +33,7 @@ alias stree='open -a SourceTree .'
 alias gitup='open -a GitUp .'
 alias dockup="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 
-ZSH_THEME="robbyrussell"    # "cloud || ys || agnoster || amuse"
+ZSH_THEME="ys"    # "robbyrussell || cloud || ys || agnoster || amuse || bullet-train"
 
 plugins=(git)
 plugins=(osx)
@@ -62,7 +62,7 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
-[[ -s "$HOME/.rvm/scripts/rvm"  ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if [ $(($RANDOM%2)) -eq 0 ]; then
   fortune | cowsay -w | lolcat
