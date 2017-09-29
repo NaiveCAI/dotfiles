@@ -29,6 +29,7 @@ brew install autojump
 brew install ack    // for ctrlsf and ack.vim
 brew install ctags
 brew install CMake  // for install YCM
+brew install macvim --with-cscope --with-lua --override-system-vim // enable lua with macvim
 ```
 #### Clone repos
 ```
@@ -37,6 +38,7 @@ cd && git clone git@github.com:NaiveCAI/dotfiles.git
 #### Create links
 ```
 mkdir ~/.vim
+ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme
 ```
