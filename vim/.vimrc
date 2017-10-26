@@ -64,6 +64,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'yonchu/accelerated-smooth-scroll'
 Plugin 'slim-template/vim-slim'
+Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
@@ -640,3 +641,9 @@ let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-"
 let loaded_netrwPlugin=1
 "NERDTree at vim startup
 "autocmd VimEnter * NERDTree
+
+"Try speed vim syntax rendering up
+augroup vimrc
+  autocmd!
+  autocmd BufWinEnter,Syntax * syn sync minlines=500 maxlines=500
+augroup END
