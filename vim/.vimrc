@@ -18,7 +18,6 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'morhetz/gruvbox'
@@ -122,7 +121,7 @@ set fileencodings=utf-8
 set completeopt=menu,preview
 set wildmode=longest,list:longest
 
-set iskeyword=@,48-57,_,-,!,?,192-255
+set iskeyword=@,48-57,_,-,192-255
 
 "Try to fix jk map error: Quickly time out on keycodes, but never time out on mappings
 set notimeout ttimeout ttimeoutlen=200
@@ -506,7 +505,7 @@ vnoremap , <ESC>
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
 nmap mf :NERDTreeFind<cr>
-nmap <Leader>d :bd<cr>
+nmap <Leader>w :bd<cr>
 nmap <Leader>z :nohl<cr>
 nmap <Leader>ss :so ~/.vimrc<cr>
 nmap <Leader>t :Tab /
@@ -569,9 +568,6 @@ if has("gui_vimr") || has("gui_macvim")
   nnoremap ≠ <C-W>=
 endif
 
-"TODO: Get current file type as variable, then add it to commandline.
-nnoremap <Leader>ds :Dash <C-R><C-A> 
-
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
@@ -606,24 +602,9 @@ nmap <C-]> :call FollowTag()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"conf for Badwolf color theme
-"Make the tab line the same color as the background. These values can be set. [0, 1, 2, 3]
-let g:badwolf_tabline=2
-let g:badwolf_darkgutter=1
-"Turn off HTML link underlining
-let g:badwolf_html_link_underline=0
-"Turn on CSS properties highlighting
-let g:badwolf_css_props_highlight=1
-
 "conf for Gruvbox color theme
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_contrast_light='hard'
-
-"conf for sierra color theme
-let g:sierra_Campfire = 1
-
-"conf for Jellybeans
-let g:jellybeans_use_term_italics=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
