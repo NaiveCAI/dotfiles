@@ -29,7 +29,6 @@ Plugin 'mtth/locate.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
-Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'vim-scripts/ruby-matchit'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
@@ -63,7 +62,6 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'yonchu/accelerated-smooth-scroll'
 Plugin 'slim-template/vim-slim'
-Plugin 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 
