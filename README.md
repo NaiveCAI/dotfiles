@@ -1,6 +1,10 @@
 # Set up my develop enviroment in a new os x system
 ## Set up zsh
 #### brew install zsh zsh-completions
+```
+brew install zsh
+brew install zsh-completions
+```
 #### install oh-my-zsh:
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
