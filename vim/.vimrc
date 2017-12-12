@@ -37,18 +37,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-commentary'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'NaiveCAI/vim-kalisi'
-Plugin 'xolox/vim-misc'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
@@ -60,7 +56,6 @@ Plugin 'reedes/vim-wordy'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
-Plugin 'yonchu/accelerated-smooth-scroll'
 Plugin 'slim-template/vim-slim'
 
 call vundle#end()
@@ -133,7 +128,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=60 columns=250
+    set lines=62 columns=260
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
@@ -215,11 +210,11 @@ let g:bufExplorerVertSize=30      "New split windows size set by Vim.
 
 
 "conf for easytags
-set tags=./tags;
-let g:easytags_async=1
-let g:easytags_dynamic_files=1    "Also look for project-specific tags files.
-let g:easytags_auto_highlight=0
-let g:ycm_collect_identifiers_from_tags_files=0
+"set tags=./tags;
+"let g:easytags_async=1
+"let g:easytags_dynamic_files=1    "Also look for project-specific tags files.
+"let g:easytags_auto_highlight=0
+"let g:ycm_collect_identifiers_from_tags_files=0
 
 
 "conf for gem-ctags search all gems
