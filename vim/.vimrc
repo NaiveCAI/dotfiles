@@ -80,6 +80,8 @@ set nocompatible
 "This could be an inconvenience in some cases where you are storing something else in the clipboard as it will override it.
 "set clipboard=unnamed
 set background=dark
+set hlsearch
+set incsearch
 
 set autoindent
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
