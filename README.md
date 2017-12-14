@@ -25,15 +25,23 @@ brew install autojump
 ## Set up vim
 - Python is prerequisite for three of my vim plugins.
   1. YouCompleteMe requires Vim compiled with Python (2.6+ or 3.3+) support.
-  2. MatchTagAlways requires python.
-  3. UltiSnips requires py >= 2.7 or py3
+  2. deoplete.nvim requires Neovim or Vim8 with `if_python3`. See: https://github.com/Shougo/deoplete.nvim
+    ```
+    brew install python3
+    pip3 install --upgrade neovim // Seems necessary otherwise you will meet some stupid error and can not enable deoplete.
+    ```
+  3. MatchTagAlways requires python.
+  4. UltiSnips requires py >= 2.7 or py3
 
 #### Install
 ```
 brew install ack    // for ctrlsf and ack.vim
 brew install ctags
 brew install CMake  // for install YCM
-brew install macvim --with-cscope --with-lua --override-system-vim // enable lua with macvim
+
+brew install vim --with-python3 --without-python --with-override-system-vim
+brew install macvim --with-python3 --without-python --with-override-system-vim // enable python3 if use deoplete.nvim.
+brew install macvim --with-cscope --with-lua --override-system-vim             // enable lua with macvim if use YCM.
 ```
 #### Clone repos
 ```
