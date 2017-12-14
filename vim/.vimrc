@@ -9,7 +9,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Shougo/neocomplete.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
