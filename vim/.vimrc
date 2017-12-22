@@ -27,7 +27,6 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'sjl/gundo.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'junegunn/limelight.vim'
@@ -144,7 +143,6 @@ if has("gui_macvim")
     set guifont=OperatorMono\ Nerd\ Font:h11
     set linespace=0
   endif
-  let g:airline_powerline_fonts=1
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
@@ -243,6 +241,7 @@ let g:airline#extensions#bufferline#enabled=1
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#ale#enabled=1
+let g:airline_powerline_fonts=1
 "let g:airline#extensions#syntastic#enabled=1
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
@@ -364,20 +363,28 @@ let g:tagbar_type_ruby = {
 "conf for vim-multiple-cursors
 "Fix insert mode conflict with neocomplete plugin
 function! Multiple_cursors_before()
-    exe 'NeoCompleteLock'
-    echo 'Disabled autocomplete'
+  exe 'NeoCompleteLock'
+  echo 'Disabled autocomplete'
 endfunction
 
 function! Multiple_cursors_after()
-    exe 'NeoCompleteUnlock'
-    echo 'Enabled autocomplete'
+  exe 'NeoCompleteUnlock'
+  echo 'Enabled autocomplete'
 endfunction
 
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
 
-"conf for gundo
-let g:gundo_width=40
-let g:gundo_preview_height=40
-let g:gundo_right=1
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
 
 "conf for wxapp
@@ -426,6 +433,7 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jk <ESC>
 vnoremap , <ESC>
+nnoremap p ]p
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
 nmap mf :NERDTreeFind<cr>
@@ -445,7 +453,6 @@ nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
 nmap <Leader>f :CtrlSF 
 nmap <F3> <Plug>CtrlSFCwordExec
 nmap <F4> :!rspec % --no-color<CR>
-nmap <F5> :GundoToggle<CR>
 
 "for fugitive
 nmap <Leader>gpu :Gpull 

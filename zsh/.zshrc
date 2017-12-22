@@ -41,6 +41,7 @@ plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/sbin:$PATH"  # For homebrew
 
 if [[ -n $SSH_CONNECTION  ]]; then
   export EDITOR='vim'
