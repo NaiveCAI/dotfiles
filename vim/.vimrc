@@ -50,7 +50,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
@@ -135,7 +134,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=62 columns=260
+    set lines=65 columns=275
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
@@ -215,14 +214,6 @@ let g:bufExplorerSplitRight=1     "Split right.
 let g:bufExplorerVertSize=30      "New split windows size set by Vim.
 
 
-"conf for easytags
-"set tags=./tags;
-"let g:easytags_async=1
-"let g:easytags_dynamic_files=1    "Also look for project-specific tags files.
-"let g:easytags_auto_highlight=0
-"let g:ycm_collect_identifiers_from_tags_files=0
-
-
 "conf for gem-ctags search all gems
 "autocmd FileType ruby let &l:tags=pathogen#legacyjoin(pathogen#uniq(
 "      \ pathogen#split(&tags) +
@@ -238,13 +229,13 @@ au FileType go nmap <leader>c <Plug>(go-coverage)
 
 "conf for airline
 let g:airline#extensions#bufferline#enabled=1
-let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#ale#enabled=1
 let g:airline_powerline_fonts=1
-"let g:airline#extensions#syntastic#enabled=1
+let g:airline#extensions#tabline#enabled=0
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
+"let g:airline#extensions#syntastic#enabled=1
 
 
 "conf for syntastic
@@ -360,33 +351,6 @@ let g:tagbar_type_ruby = {
 \ }
 
 
-"conf for vim-multiple-cursors
-"Fix insert mode conflict with neocomplete plugin
-function! Multiple_cursors_before()
-  exe 'NeoCompleteLock'
-  echo 'Disabled autocomplete'
-endfunction
-
-function! Multiple_cursors_after()
-  exe 'NeoCompleteUnlock'
-  echo 'Enabled autocomplete'
-endfunction
-
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-    exe 'NeoCompleteLock'
-  endif
-endfunction
-
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
-
-
 "conf for wxapp
 let g:user_emmet_settings = {
 \ 'wxss': {
@@ -433,7 +397,6 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap jk <ESC>
 vnoremap , <ESC>
-nnoremap p ]p
 imap <Tab> <C-X>
 nmap mm :NERDTreeToggle<cr>
 nmap mf :NERDTreeFind<cr>

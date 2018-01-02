@@ -39,9 +39,12 @@ brew install ack    // for ctrlsf and ack.vim
 brew install ctags
 brew install CMake  // for install YCM
 
+// enable python3 if use deoplete.nvim
 brew install vim --with-python3 --without-python --with-override-system-vim
-brew install macvim --with-python3 --without-python --with-override-system-vim // enable python3 if use deoplete.nvim.
-brew install macvim --with-cscope --with-lua --override-system-vim             // enable lua with macvim if use YCM.
+brew install macvim --with-python3 --without-python --with-override-system-vim
+
+// enable lua with macvim if use YCM.
+brew install macvim --with-cscope --with-lua --override-system-vim
 ```
 #### Clone repos
 ```
