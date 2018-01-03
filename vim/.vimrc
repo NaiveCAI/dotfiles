@@ -27,7 +27,6 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'morhetz/gruvbox'
-Plugin 'Yggdroot/indentLine'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'junegunn/limelight.vim'
 Plugin 'mtth/locate.vim'
@@ -61,6 +60,8 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'w0ng/vim-hybrid'
 
 call vundle#end()
 
@@ -93,20 +94,14 @@ set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 set mouse=a                 "可以在buffer的任何地方使用鼠标
 set cursorline              "为光标所在行加下划线
 set cursorcolumn            "highlight current column
-set selection=exclusive
 set selectmode=mouse,key
 
-"set relativenumber
+set relativenumber
 set nu
 set autoread                "文件在Vim之外修改过，自动重新读入
 set autowrite               "切换buffer前保存内容
 set ignorecase smartcase    "检索时不忽略大小写
 set hls                     "检索时高亮显示匹配项
-
-set foldcolumn=1
-set foldlevel=3
-set foldmethod=indent       "代码折叠
-autocmd BufRead,BufNewFile *.css,*.scss,*.less setlocal foldmethod=marker foldmarker={,}
 
 set matchtime=1             "匹配括号高亮时间（十分之一秒）
 set lazyredraw              "buffer screen updates instead of updating all the time
@@ -120,17 +115,17 @@ set fileencodings=utf-8
 set completeopt=menu,preview
 set wildmode=longest,list:longest
 
-set iskeyword=@,48-57,_,-,192-255
+set foldmethod=syntax
+set nofoldenable
 
-"Try to fix jk map error: Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set iskeyword=@,48-57,_,-,192-255
 
 filetype indent on
 filetype plugin on
 
 "Specific configurations
 if has("gui_macvim")
-  set transparency=5
+  set transparency=4
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
@@ -155,15 +150,10 @@ if has("gui_vimr")
 endif
 
 if has("gui_macvim") || has("gui_vimr")
-  colorscheme gruvbox              "macvim_theme_theme
-  "let g:airline_theme='sierra'    "macvim_airline_theme
+  colorscheme hybrid             "macvim_theme_theme
+  "let g:airline_theme='sierra'  "macvim_airline_theme
   set termguicolors
   highlight Comment gui=italic
-elseif has("gui_running")
-  set lines=40 columns=160
-  set guifont=yahei\ consolas\ hybrid\ 9
-elseif has("gui_win32")
-  set guifont=YaHei\ Consolas\ Hybrid:h10
 else
   colorscheme gruvbox
   set fillchars+=vert:\|
@@ -218,13 +208,6 @@ let g:bufExplorerVertSize=30      "New split windows size set by Vim.
 "autocmd FileType ruby let &l:tags=pathogen#legacyjoin(pathogen#uniq(
 "      \ pathogen#split(&tags) +
 "      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
-
-
-"conf for golang
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
 
 
 "conf for airline
@@ -285,22 +268,6 @@ autocmd BufReadPre *.js let b:javascript_lib_use_react=1
 "autocmd BufReadPre *.js let b:javascript_lib_use_angularjs=1
 "autocmd BufReadPre *.js let b:javascript_lib_use_angularui=1
 "autocmd BufReadPre *.js let b:javascript_lib_use_angularuirouter=1
-
-
-"conf for vim-jsx
-"By default, JSX syntax highlighting and indenting will be enabled only for files with the .jsx extension. If you would like JSX in .js files.
-"let g:jsx_ext_required=0
-
-
-"conf for indentLine
-"Vim
-let g:indentLine_color_term=239
-"GVim
-let g:indentLine_color_gui='#86827f'
-let g:indentLine_char='¦'
-"none X terminal
-let g:indentLine_color_tty_light=7 "(default: 4)
-let g:indentLine_color_dark=1 "(default: 2)
 
 
 "con for limelight
@@ -462,17 +429,21 @@ if has("gui_vimr") || has("gui_macvim")
   nnoremap ≠ <C-W>=
 endif
 
+
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
+
 
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
 
+
 "for macvim clipboard
 vmap "+y :w !pbcopy<cr><cr> 
 nmap "+p :r !pbpaste<cr><cr>
+
 
 "for vim wordy
 noremap <silent> <F8> :<C-u>NextWordy<cr>
@@ -500,6 +471,9 @@ nmap <C-]> :call FollowTag()<cr>
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_contrast_light='hard'
 
+
+"conf for hybrid
+let g:hybrid_custom_term_colors = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "other conf
