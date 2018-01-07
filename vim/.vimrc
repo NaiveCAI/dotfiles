@@ -16,15 +16,12 @@ else
   Plugin 'roxma/nvim-yarp'
   Plugin 'roxma/vim-hug-neovim-rpc'
 endif
-Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'kien/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -61,7 +58,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'w0ng/vim-hybrid'
+Plugin 'tpope/gem-ctags'
 
 call vundle#end()
 
@@ -129,7 +126,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=65 columns=275
+    set lines=68 columns=285
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
@@ -150,7 +147,7 @@ if has("gui_vimr")
 endif
 
 if has("gui_macvim") || has("gui_vimr")
-  colorscheme hybrid             "macvim_theme_theme
+  colorscheme gruvbox            "macvim_theme_theme
   "let g:airline_theme='sierra'  "macvim_airline_theme
   set termguicolors
   highlight Comment gui=italic
@@ -185,8 +182,6 @@ let g:ctrlp_open_multiple_files='3vjr'
 "conf for ctrlsf
 let g:ctrlsf_winsize='35%'
 let g:ctrlsf_mapping={
-      \ "next": "n",
-      \ "prev": "N",
       \ "openb": "",
       \}
 let g:ctrlsf_ignore_dir = ['bower_components', 'npm_modules', 'tmp', 'log', 'tags']
@@ -365,8 +360,6 @@ let g:user_emmet_settings = {
 inoremap jk <ESC>
 vnoremap , <ESC>
 imap <Tab> <C-X>
-nmap mm :NERDTreeToggle<cr>
-nmap mf :NERDTreeFind<cr>
 nmap <Leader>w :bd<cr>
 nmap <Leader>z :nohl<cr>
 nmap <Leader>ss :so ~/.vimrc<cr>
@@ -374,15 +367,20 @@ nmap <Leader>t :Tab /
 nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
 nmap <Leader>sss :set syntax=
-nmap <F10> :BufOnly<cr>
+nmap <F10> :%bd<cr>
 
 "for macvim's sb screen bug
 nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
 
+"for NERDTree
+nmap mm :NERDTreeToggle<cr>
+nmap mf :NERDTreeFind<cr>
+
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
+nmap <Leader>of :CtrlSFToggle<cr>
 nmap <F3> <Plug>CtrlSFCwordExec
-nmap <F4> :!rspec % --no-color<CR>
+nmap <F4> :!rspec % --no-color<cr>
 
 "for fugitive
 nmap <Leader>gpu :Gpull 
@@ -471,9 +469,6 @@ nmap <C-]> :call FollowTag()<cr>
 "let g:gruvbox_contrast_dark='hard'
 "let g:gruvbox_contrast_light='hard'
 
-
-"conf for hybrid
-let g:hybrid_custom_term_colors = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "other conf
