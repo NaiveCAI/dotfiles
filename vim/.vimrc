@@ -9,13 +9,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
@@ -59,6 +52,7 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/gem-ctags'
+Plugin 'jlanzarotta/bufexplorer'
 
 call vundle#end()
 
@@ -97,7 +91,8 @@ set relativenumber
 set nu
 set autoread                "文件在Vim之外修改过，自动重新读入
 set autowrite               "切换buffer前保存内容
-set ignorecase smartcase    "检索时不忽略大小写
+set ignorecase              "检索时忽略大小写
+set smartcase
 set hls                     "检索时高亮显示匹配项
 
 set matchtime=1             "匹配括号高亮时间（十分之一秒）
@@ -112,7 +107,7 @@ set fileencodings=utf-8
 set completeopt=menu,preview
 set wildmode=longest,list:longest
 
-set foldmethod=syntax
+set foldmethod=indent
 set nofoldenable
 
 set iskeyword=@,48-57,_,-,192-255
@@ -122,11 +117,11 @@ filetype plugin on
 
 "Specific configurations
 if has("gui_macvim")
-  set transparency=4
+  set transparency=3
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=68 columns=285
+    set lines=70 columns=305
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
@@ -169,7 +164,7 @@ let g:NERDTreeWinSize=50
 let g:NERDTreeHijackNetrw=0
 
 
-"conf for ctrlp
+"conf for CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_custom_ignore={
       \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|node_modules)$',
@@ -177,6 +172,19 @@ let g:ctrlp_custom_ignore={
       \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_open_multiple_files='3vjr'
+" CtrlP auto cache clearing.
+function! SetupCtrlP()
+  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+    augroup CtrlPExtension
+      autocmd!
+      autocmd FocusGained  * CtrlPClearCache
+      autocmd BufWritePost * CtrlPClearCache
+    augroup END
+  endif
+endfunction
+if has("autocmd")
+  autocmd VimEnter * :call SetupCtrlP()
+endif
 
 
 "conf for ctrlsf
@@ -245,9 +253,12 @@ let g:airline#extensions#tabline#enabled=0
 
 
 "conf for ale - Asynchronous Lint Engine
-let g:ale_linters = {
-      \   'ruby': ['ruby'],
-      \}
+let g:ale_open_list=1
+let g:ale_lint_on_enter=0
+let g:ale_set_loclist=0
+"let g:ale_set_quickfix=1
+let g:ale_lint_on_text_changed='never'
+let g:ale_linters={'ruby': ['ruby']}
 
 
 "conf for js-libraries-syntax
@@ -286,7 +297,7 @@ let g:limelight_eop='\ze\n^\s'
 
 
 "conf for deoplete
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 
 "conf for Ultisnips
@@ -386,6 +397,7 @@ nmap <F4> :!rspec % --no-color<cr>
 nmap <Leader>gpu :Gpull 
 nmap <Leader>gps :Gpush 
 nmap <Leader>gco :Gcommit 
+nmap <Leader>ga :Gwrite<cr>
 nmap <Leader>gb :Gblame<cr>
 nmap <Leader>gs :Gstatus<cr>
 nmap <Leader>gd :Gvdiff<cr>
@@ -491,3 +503,27 @@ augroup vimrc
   autocmd!
   autocmd BufWinEnter,Syntax * syn sync minlines=500 maxlines=500
 augroup END
+
+
+" Highlight all instances of word under cursor, when idle.
+" Useful when studying strange source code.
+" Type z/ to toggle highlighting on/off.
+nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+function! AutoHighlightToggle()
+  let @/ = ''
+  if exists('#auto_highlight')
+    au! auto_highlight
+    augroup! auto_highlight
+    setl updatetime=4000
+    echo 'Highlight current word: off'
+    return 0
+  else
+    augroup auto_highlight
+      au!
+      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
+    augroup end
+    setl updatetime=500
+    echo 'Highlight current word: ON'
+    return 1
+  endif
+endfunction
