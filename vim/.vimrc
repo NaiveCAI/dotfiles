@@ -53,6 +53,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/gem-ctags'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
@@ -301,7 +302,7 @@ let g:limelight_eop='\ze\n^\s'
 
 
 "conf for Ultisnips
-let g:UltiSnipsExpandTrigger="<TAB>"
+let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsEditSplit='vertical'
 "let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
