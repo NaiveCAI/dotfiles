@@ -39,6 +39,13 @@ brew install ack    // for ctrlsf and ack.vim
 brew install ctags
 brew install CMake  // for install YCM
 
+// For Ubuntu need those dependencies
+sudo apt-get update && sudo apt-get install build-essential
+sudo apt-get install cmake
+sudo apt-get install python-dev libxml2-dev libxslt-dev
+// If python3
+sudo apt-get install python3-dev libxml2-dev libxslt-dev
+
 // enable python3 if use deoplete.nvim
 brew install vim --with-python3 --without-python --with-override-system-vim
 brew install macvim --with-python3 --without-python --with-override-system-vim
@@ -53,6 +60,7 @@ cd && git clone git@github.com:NaiveCAI/dotfiles.git
 #### Create links
 ```
 mkdir ~/.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme

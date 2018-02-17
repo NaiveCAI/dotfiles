@@ -54,6 +54,7 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'tpope/gem-ctags'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'blueyed/vim-diminactive'
 
 call vundle#end()
 
