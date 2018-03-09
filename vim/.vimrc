@@ -55,6 +55,7 @@ Plugin 'tpope/gem-ctags'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'blueyed/vim-diminactive'
+Plugin 'mbbill/undotree'
 
 call vundle#end()
 
