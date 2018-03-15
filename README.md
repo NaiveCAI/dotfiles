@@ -87,7 +87,7 @@ ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
 ln -sf ~/.vim/bundle ~/.config/nvim/bundle
 ```
 
-## Set rails conf for vim
+## Set up rails specific configurations
 ```
 gem install gem-ctags
 gem ctags
@@ -96,6 +96,11 @@ ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
 ln -sf ~/dotfiles/ruby/.pryrc ~/.pryrc
 ```
 
+## Set up python specific configurations
+```
+pip install yapf
+pip install pylint
+```
 
 ## Other useful plugin in terminal
 - brew install tree

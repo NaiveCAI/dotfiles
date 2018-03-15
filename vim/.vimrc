@@ -56,6 +56,9 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'mbbill/undotree'
+Plugin 'python-mode/python-mode'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
@@ -165,6 +168,7 @@ hi VertSplit guibg=bg guifg=fg
 "conf for NERDTree
 let g:NERDTreeWinSize=50
 let g:NERDTreeHijackNetrw=0
+let NERDTreeIgnore=['__pycache__[[dir]]', '\.pyc$[[file]]']
 
 
 "conf for CtrlP
@@ -175,6 +179,7 @@ let g:ctrlp_custom_ignore={
       \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_open_multiple_files='3vjr'
+let g:ctrlp_show_hidden=1
 " CtrlP auto cache clearing.
 function! SetupCtrlP()
   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
@@ -261,7 +266,12 @@ let g:ale_lint_on_enter=0
 let g:ale_set_loclist=0
 "let g:ale_set_quickfix=1
 let g:ale_lint_on_text_changed='never'
-let g:ale_linters={'ruby': ['ruby']}
+let g:ale_linters={'ruby': ['ruby'], 'python': ['flake8', 'pylint']}
+let b:ale_fixers = {'python': ['autopep8', 'yapf']}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '▷'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 
 "conf for js-libraries-syntax
