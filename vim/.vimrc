@@ -174,7 +174,7 @@ let NERDTreeIgnore=['__pycache__[[dir]]', '\.pyc$[[file]]']
 "conf for CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_custom_ignore={
-      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|node_modules)$',
+      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|node_modules|.webassets-cache|__pycache__)$',
       \ 'file': '\v\.(log|jpg|jpeg|png)$',
       \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
