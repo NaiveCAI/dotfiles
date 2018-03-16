@@ -504,7 +504,8 @@ au BufRead,BufNewFile *.rabl setf ruby
 au BufRead,BufNewFile *.es6 setf javascript
 "for slim syntax
 au BufRead,BufNewFile *.slim setf haml
-"for ionic
+"for jinja syntax
+au BufRead,BufNewFile *.j2 setf jinja "for ionic
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 "close the netrw at vim startup
 let loaded_netrwPlugin=1

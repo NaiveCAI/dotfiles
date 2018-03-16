@@ -1,0 +1,79 @@
+snippet autoescape
+	{% autoescape ${1} %}
+		${2}
+	{% endautoescape %}
+snippet include
+	{% include '${1:template}' %}
+snippet extends
+	{% extends '${1:template}' %}
+snippet embed
+	{% embed '${1:template}' %}
+		${2}
+	{% endembed %}
+snippet macro
+	{% macro ${1:name}(${2:params}) %}
+		${3}
+	{% endmacro %}
+snippet import
+	{% import '${1:template}' as ${2:name} %}
+snippet self
+	{% import _self as ${1:_} %}
+snippet filter
+	{% filter ${1:filterName} %}
+		${2}
+	{% endfilter %}
+snippet do
+	{% do ${1} %}
+snippet flush
+	{% flush %}
+snippet use
+	{% use ${1:template} %}
+snippet spaceless
+	{% spaceless %}
+		${1}
+	{% endspaceless %}
+snippet if
+	{% if ${1} %}
+		${2}
+	{% endif %}
+snippet elseif
+	{% elseif ${1} %}
+		${2}
+snippet else
+	{% else %}
+		${1}
+snippet endif
+	{% endif %}
+snippet for
+	{% for ${2:} in ${1} %}
+		{{ $2 }}
+	{% endfor %}
+snippet set
+	{% set ${1:var} = ${2:value} %}${3}
+snippet {{
+	{{ ${1} }}${2}
+snippet }}
+	{{ ${1} }}${2}
+snippet %%
+	{% ${1} %}${2}
+snippet ##
+	{# ${1} #}${2}
+snippet %end
+	{% ${1:block} %}${2}{% end$1 %}
+snippet block
+	{% block ${1:name} %}${2}{% endblock %}
+snippet date
+	{{ ${1:date}|date("${2:d.m.Y}") }}
+snippet time
+	{{ ${1:date}|date("${2:H:i:s}") }}
+snippet datetime
+	{{ ${1:date}|date("${2:H:i:s d.m.Y}") }}
+snippet dump
+	{{ dump(${1:varName}) }}
+snippet parent
+	{{ parent() }}
+snippet default
+	{{ ${1:var}|default(${2:false}) }}
+snippet path
+	{{ path(${1:path}) }}
+endsnippet
