@@ -59,6 +59,7 @@ Plugin 'mbbill/undotree'
 Plugin 'python-mode/python-mode'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
+Plugin 'mhinz/vim-startify'
 
 call vundle#end()
 

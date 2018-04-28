@@ -65,11 +65,11 @@ export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-if [ $(($RANDOM%2)) -eq 0 ]; then
-  fortune | cowsay -w | lolcat
-else
-  fortune | cowthink -d | lolcat
-fi
+# if [ $(($RANDOM%2)) -eq 0 ]; then
+#   fortune | cowsay -w | lolcat
+# else
+#   fortune | cowthink -d | lolcat
+# fi
 
 #
 # Dynamically change vim theme
