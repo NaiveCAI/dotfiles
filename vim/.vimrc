@@ -60,6 +60,7 @@ Plugin 'python-mode/python-mode'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'dart-lang/dart-vim-plugin'
 
 call vundle#end()
 
