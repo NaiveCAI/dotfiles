@@ -34,25 +34,30 @@ brew install autojump
   4. UltiSnips requires py >= 2.7 or py3
 
 #### Install
-```
-brew install ack    // for ctrlsf and ack.vim
-brew install ctags
-brew install CMake  // for install YCM
+- Install prerequisites
+  ```
+  // For OSX
+  brew install ack    // for ctrlsf and ack.vim
+  brew install ctags
+  brew install CMake  // for install YCM
 
-// For Ubuntu need those dependencies
-sudo apt-get update && sudo apt-get install build-essential
-sudo apt-get install cmake
-sudo apt-get install python-dev libxml2-dev libxslt-dev
-// If python3
-sudo apt-get install python3-dev libxml2-dev libxslt-dev
+  // For Ubuntu need those dependencies
+  sudo apt-get update && sudo apt-get install build-essential
+  sudo apt-get install cmake
+  sudo apt-get install python-dev libxml2-dev libxslt-dev
 
-// enable python3 if use deoplete.nvim
-brew install vim --with-python3 --without-python --with-override-system-vim
-brew install macvim --with-python3 --without-python --with-override-system-vim
+  // If python3
+  sudo apt-get install python3-dev libxml2-dev libxslt-dev
+  ```
+- Install GVIM
+  ```
+  // enable python3 if use deoplete.nvim
+  brew install vim --with-python3 --without-python --with-override-system-vim
+  brew install macvim --with-python3 --without-python --with-override-system-vim
 
-// enable lua with macvim if use YCM.
-brew install macvim --with-cscope --with-lua --override-system-vim
-```
+  // enable lua with macvim if use YCM.
+  brew install macvim --with-cscope --with-lua --override-system-vim
+  ```
 #### Clone repos
 ```
 cd && git clone git@github.com:NaiveCAI/dotfiles.git
