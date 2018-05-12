@@ -55,21 +55,22 @@ export GOROOT="/usr/local/go"
 export GOPATH="$HOME/Documents/Projects/go_projects"
 export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export ANDROID_HOME="/usr/local/opt/android-sdk"
 export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/usr/local/lib/flutter/bin"
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# if [ $(($RANDOM%2)) -eq 0 ]; then
-#   fortune | cowsay -w | lolcat
-# else
-#   fortune | cowthink -d | lolcat
-# fi
+if [ $(($RANDOM%2)) -eq 0 ]; then
+  fortune | cowsay -w | lolcat
+else
+  fortune | cowthink -d | lolcat
+fi
 
 #
 # Dynamically change vim theme
