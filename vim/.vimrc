@@ -61,6 +61,7 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'NaiveCAI/dart-vim-plugin'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()
 
@@ -129,7 +130,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=70 columns=305
+    set lines=65 columns=260
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'

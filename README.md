@@ -90,6 +90,8 @@ mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
 ln -sf ~/.vim/bundle ~/.config/nvim/bundle
+
+ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
 ```
 
 ## Set up rails specific configurations
