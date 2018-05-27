@@ -382,6 +382,11 @@ let g:user_emmet_settings = {
 \}
 
 
+"conf for vim-ruby-runner
+let g:RubyRunner_key = '<Leader>r'
+let g:RubyRunner_keep_focus_key = '<Leader>R'
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for other key maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -437,6 +442,9 @@ nmap <Leader>rd :Rdestroy
 "for tagbar
 nmap <Leader>tt :TagbarToggle<cr>
 
+"for undotree
+nmap <Leader>ou :UndotreeToggle<cr>
+
 "for move cursor between windows
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -456,16 +464,13 @@ if has("gui_vimr") || has("gui_macvim")
   nnoremap ≠ <C-W>=
 endif
 
-
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
 
-
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
-
 
 "for macvim clipboard
 vmap "+y :w !pbcopy<cr><cr> 
