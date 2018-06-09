@@ -43,7 +43,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'posva/vim-vue'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'reedes/vim-wordy'
 Plugin 'pbrisbin/vim-mkdir'
@@ -131,7 +130,7 @@ if has("gui_macvim")
   set lines=50 columns=220
   "set guifont=Source\ Code\ Pro:h12
   if hostname == "TracyEkohe"
-    set lines=68 columns=265
+    set lines=55 columns=220
     set guifont=OperatorMono\ Nerd\ Font:h13
     set linespace=2
   elseif hostname == 'NaiveCAI'
