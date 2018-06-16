@@ -277,6 +277,11 @@ highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 
+"conf for YCM
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_completion=1
+
+
 "conf for js-libraries-syntax
 let g:used_javascript_libs='jquery,underscore,react'
 let g:go_highlight_functions=1
@@ -463,13 +468,16 @@ if has("gui_vimr") || has("gui_macvim")
   nnoremap ≠ <C-W>=
 endif
 
+
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
 
+
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
+
 
 "for macvim clipboard
 vmap "+y :w !pbcopy<cr><cr> 
