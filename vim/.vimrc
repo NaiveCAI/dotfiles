@@ -43,6 +43,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-haml'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'reedes/vim-wordy'
 Plugin 'pbrisbin/vim-mkdir'
@@ -199,10 +200,15 @@ endif
 
 
 "conf for ctrlsf
+let g:ctrlsf_search_mode='async'
 let g:ctrlsf_winsize='35%'
 let g:ctrlsf_mapping={
       \ "openb": "",
       \}
+let g:ctrlsf_auto_focus = {
+      \ "at" : "done",
+      \ "duration_less_than": 4000
+      \ }
 let g:ctrlsf_ignore_dir = ['bower_components', 'npm_modules', 'tmp', 'log', 'tags']
 let g:ctrlsf_context = '-B 6 -A 6'
 
