@@ -63,6 +63,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'NaiveCAI/dart-vim-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'henrik/vim-ruby-runner'
+Plugin 'chr4/nginx.vim'
 
 call vundle#end()
 
