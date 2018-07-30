@@ -124,7 +124,11 @@ pip install pylint
 ```
 brew install privoxy
 brew services start privoxy
+
+// For mac
 sudo vim /usr/local/etc/privoxy/config
+// For ubuntu
+sudo vim /etc/privoxy/config
 
 // 1080 for shadowsocks and 1086 for shadowsocksNG
 forward-socks5 / 127.0.0.1:1080 .
