@@ -121,17 +121,17 @@ pip install pylint
 
 
 # Fuck GongFei's gfw using shadowsocksNG with privoxy
+- For Mac
 ```
 brew install privoxy
 brew services start privoxy
 
 // For mac
 sudo vim /usr/local/etc/privoxy/config
-// For ubuntu
-sudo vim /etc/privoxy/config
 
 // 1080 for shadowsocks and 1086 for shadowsocksNG
 forward-socks5 / 127.0.0.1:1080 .
 
 alias open_proxy='export http_proxy=localhost:8118 https_proxy=localhost:8118'
 ```
+- For Ubuntu: https://gist.github.com/alexniver/9a4f1791fe4305b0750a

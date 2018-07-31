@@ -422,7 +422,8 @@ nmap mf :NERDTreeFind<cr>
 
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
-nmap <Leader>of :CtrlSFToggle<cr>
+nmap <Leader>ot :CtrlSFToggle<cr>
+nmap <Leader>of :CtrlSFFocus<cr>
 nmap <F3> <Plug>CtrlSFCwordExec
 nmap <F4> :!rspec % --no-color<cr>
 
