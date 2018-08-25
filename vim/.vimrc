@@ -204,7 +204,7 @@ endif
 let g:ctrlsf_search_mode='async'
 let g:ctrlsf_winsize='35%'
 let g:ctrlsf_mapping={
-      \ "openb": "",
+      \ "vsplit": "<C-V>"
       \}
 let g:ctrlsf_auto_focus = {
       \ "at" : "done",
