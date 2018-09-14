@@ -84,3 +84,5 @@ fi
 #   seed=$(($RANDOM%4))
 #   zsh -c "change_vim_theme.sh $themes[$seed]"
 # }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

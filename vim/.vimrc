@@ -64,6 +64,7 @@ Plugin 'NaiveCAI/dart-vim-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'henrik/vim-ruby-runner'
 Plugin 'chr4/nginx.vim'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 
@@ -280,6 +281,7 @@ let g:ale_linters={'ruby': ['ruby'], 'python': ['flake8', 'pylint']}
 let b:ale_fixers = {'python': ['autopep8', 'yapf']}
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '▷'
+let g:ale_lint_delay=100
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -552,7 +554,7 @@ function! AutoHighlightToggle()
   if exists('#auto_highlight')
     au! auto_highlight
     augroup! auto_highlight
-    setl updatetime=4000
+    setl updatetime=3000
     echo 'Highlight current word: off'
     return 0
   else
