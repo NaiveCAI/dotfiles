@@ -92,6 +92,7 @@ ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
 ln -sf ~/.vim/bundle ~/.config/nvim/bundle
 
 ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
+ln -sf ~/dotfiles/lints/pep8 ~/.config/pep8
 ```
 
 ## Set up rails specific configurations

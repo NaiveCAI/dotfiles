@@ -56,7 +56,6 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'blueyed/vim-diminactive'
 Plugin 'mbbill/undotree'
-Plugin 'python-mode/python-mode'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-startify'
@@ -65,6 +64,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'henrik/vim-ruby-runner'
 Plugin 'chr4/nginx.vim'
 Plugin 'posva/vim-vue'
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 
@@ -277,11 +277,11 @@ let g:ale_lint_on_enter=0
 let g:ale_set_loclist=0
 "let g:ale_set_quickfix=1
 let g:ale_lint_on_text_changed='never'
-let g:ale_linters={'ruby': ['ruby'], 'python': ['flake8', 'pylint']}
-let b:ale_fixers = {'python': ['autopep8', 'yapf']}
+let g:ale_linters={'ruby': ['ruby'], 'python': ['pylint']}
+let b:ale_fixers = {'python': ['autopep8']}
 let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '▷'
-let g:ale_lint_delay=100
+let g:ale_sign_warning = '❗️'
+let g:ale_lint_delay=50
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
@@ -555,7 +555,7 @@ function! AutoHighlightToggle()
     au! auto_highlight
     augroup! auto_highlight
     setl updatetime=3000
-    echo 'Highlight current word: off'
+    echo 'Highlight current word: OFF'
     return 0
   else
     augroup auto_highlight
