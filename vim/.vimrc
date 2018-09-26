@@ -123,6 +123,7 @@ set foldmethod=indent
 set nofoldenable
 
 set iskeyword=@,48-57,_,-,192-255
+set updatetime=100
 
 filetype indent on
 filetype plugin on
@@ -279,8 +280,8 @@ let g:ale_set_loclist=0
 let g:ale_lint_on_text_changed='never'
 let g:ale_linters={'ruby': ['ruby'], 'python': ['pylint']}
 let b:ale_fixers = {'python': ['autopep8']}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '❗️'
+let g:ale_sign_error = '❗️'
+let g:ale_sign_warning = '❕'
 let g:ale_lint_delay=50
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
@@ -393,6 +394,9 @@ let g:user_emmet_settings = {
 \   }
 \ },
 \}
+
+
+"conf for gitgutter
 
 
 "conf for vim-ruby-runner
@@ -554,7 +558,7 @@ function! AutoHighlightToggle()
   if exists('#auto_highlight')
     au! auto_highlight
     augroup! auto_highlight
-    setl updatetime=3000
+    setl updatetime=4000
     echo 'Highlight current word: OFF'
     return 0
   else
@@ -562,7 +566,7 @@ function! AutoHighlightToggle()
       au!
       au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
     augroup end
-    setl updatetime=500
+    setl updatetime=200
     echo 'Highlight current word: ON'
     return 1
   endif
