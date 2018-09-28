@@ -50,8 +50,6 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'tpope/gem-ctags'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'blueyed/vim-diminactive'
@@ -225,12 +223,6 @@ let g:bufExplorerSortBy='mru'
 let g:bufExplorerFindActive=1
 let g:bufExplorerSplitRight=1     "Split right.
 let g:bufExplorerVertSize=30      "New split windows size set by Vim.
-
-
-"conf for gem-ctags search all gems
-"autocmd FileType ruby let &l:tags=pathogen#legacyjoin(pathogen#uniq(
-"      \ pathogen#split(&tags) +
-"      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 
 "conf for airline
