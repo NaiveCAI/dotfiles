@@ -52,7 +52,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'blueyed/vim-diminactive'
 Plugin 'mbbill/undotree'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
@@ -63,6 +62,7 @@ Plugin 'henrik/vim-ruby-runner'
 Plugin 'chr4/nginx.vim'
 Plugin 'posva/vim-vue'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -558,7 +558,7 @@ function! AutoHighlightToggle()
       au!
       au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
     augroup end
-    setl updatetime=200
+    setl updatetime=500
     echo 'Highlight current word: ON'
     return 1
   endif
