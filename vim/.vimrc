@@ -164,7 +164,7 @@ end
 
 "Change vertical split line style
 set fillchars+=vert:\|
-hi VertSplit guibg=bg guifg=fg
+highlight VertSplit guibg=bg guifg=fg
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -389,6 +389,9 @@ let g:user_emmet_settings = {
 
 
 "conf for gitgutter
+"To customise your sign column's background color, first tell vim-gitgutter to leave it alone:
+let g:gitgutter_override_sign_column_highlight=0
+highlight clear SignColumn
 
 
 "conf for vim-ruby-runner
