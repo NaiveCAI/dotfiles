@@ -13,7 +13,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'NaiveCAI/gruvbox'
@@ -391,7 +391,7 @@ let g:user_emmet_settings = {
 "conf for gitgutter
 "To customise your sign column's background color, first tell vim-gitgutter to leave it alone:
 let g:gitgutter_override_sign_column_highlight=0
-highlight clear SignColumn
+" highlight clear SignColumn
 
 
 "conf for vim-ruby-runner
