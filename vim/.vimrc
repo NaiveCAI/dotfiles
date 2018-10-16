@@ -64,6 +64,7 @@ Plugin 'posva/vim-vue'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'NaiveCAI/vim-auto-highlight'
 
 call vundle#end()
 
@@ -496,27 +497,18 @@ if has("gui_vimr") || has("gui_macvim")
   nnoremap ≠ <C-W>=
 endif
 
-
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
-
 
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
 
-
-"for macvim clipboard
-vmap "+y :w !pbcopy<cr><cr> 
-nmap "+p :r !pbpaste<cr><cr>
-
-
 "for vim wordy
 noremap <silent> <F8> :<C-u>NextWordy<cr>
 xnoremap <silent> <F8> :<C-u>NextWordy<cr>
 inoremap <silent> <F8> <C-o>:NextWordy<cr>
-
 
 "for ctags
 function! FollowTag()
@@ -530,6 +522,7 @@ endfunction
 nmap <C-]> :call FollowTag()<cr>
 "nmap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 
+noremap z/ :ToggleAutoHighlightWord<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf
@@ -561,27 +554,3 @@ augroup vimrc
   autocmd!
   autocmd BufWinEnter,Syntax * syn sync minlines=500 maxlines=500
 augroup END
-
-
-" Highlight all instances of word under cursor, when idle.
-" Useful when studying strange source code.
-" Type z/ to toggle highlighting on/off.
-nnoremap z/ :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
-function! AutoHighlightToggle()
-  let @/ = ''
-  if exists('#auto_highlight')
-    au! auto_highlight
-    augroup! auto_highlight
-    setl updatetime=4000
-    echo 'Highlight current word: OFF'
-    return 0
-  else
-    augroup auto_highlight
-      au!
-      au CursorHold * let @/ = '\V\<'.escape(expand('<cword>'), '\').'\>'
-    augroup end
-    setl updatetime=500
-    echo 'Highlight current word: ON'
-    return 1
-  endif
-endfunction
