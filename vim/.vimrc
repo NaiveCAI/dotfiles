@@ -64,7 +64,6 @@ Plugin 'posva/vim-vue'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'NaiveCAI/vim-auto-highlight'
 
 call vundle#end()
 
@@ -123,6 +122,7 @@ set foldmethod=indent
 set nofoldenable
 
 set iskeyword=@,48-57,_,-,192-255
+set iskeyword+=@-@
 set updatetime=100
 
 filetype indent on
@@ -522,7 +522,6 @@ endfunction
 nmap <C-]> :call FollowTag()<cr>
 "nmap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 
-noremap z/ :ToggleAutoHighlightWord<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf

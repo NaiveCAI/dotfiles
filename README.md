@@ -4,6 +4,9 @@
 ```
 brew install zsh
 brew install zsh-completions
+
+sudo apt-get install zsh
+chsh -s $(which zsh)
 ```
 #### install oh-my-zsh:
 ```
@@ -69,6 +72,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme
+
+ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
+ln -sf ~/dotfiles/lints/pep8 ~/.config/pep8
 ```
 
 ## Set up neovim
