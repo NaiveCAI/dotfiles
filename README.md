@@ -77,30 +77,6 @@ ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
 ln -sf ~/dotfiles/lints/pep8 ~/.config/pep8
 ```
 
-## Set up neovim
-#### Install
-```
-brew install neovim
-```
-
-#### Install python dependency
-```
-pip2 install --user neovim
-or
-pip3 install --user neovim
-```
-
-#### Create links
-```
-mkdir -p ~/.config/nvim
-ln -sf ~/dotfiles/vim/.vimrc ~/.config/nvim/init.vim
-ln -sf ~/dotfiles/vim/UltiSnips ~/.config/nvim/UltiSnips
-ln -sf ~/.vim/bundle ~/.config/nvim/bundle
-
-ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
-ln -sf ~/dotfiles/lints/pep8 ~/.config/pep8
-```
-
 ## Set up rails specific configurations
 ```
 gem install gem-ctags
@@ -142,3 +118,34 @@ forward-socks5 / 127.0.0.1:1080 .
 alias open_proxy='export http_proxy=localhost:8118 https_proxy=localhost:8118'
 ```
 - For Ubuntu: https://gist.github.com/alexniver/9a4f1791fe4305b0750a
+
+- On ubuntu server under GFW
+```
+sudo pip install shadowsocks
+sudo apt-get install privoxy
+
+vim ~/shadowsocks.json
+// Add config below
+{
+  "server": "",
+  "server_port": ,
+  "local_port": 1080,
+  "password": "",
+  "timeout": 600,
+  "method": ""
+}
+
+sudo vim /etc/privoxy/confg
+// Add config
+forward-socks5 / 127.0.0.1:1080 .
+sudo systemctl restart privoxy
+
+sudo vim /etc/rc.local
+// Add config for auto start sslocal
+/usr/local/bin/sslocal -c /home/tracy/shadowsocks.json
+
+vim ~/.zshrc
+// Add config
+alias open_proxy='export http_proxy=localhost:8118 https_proxy=localhost:8118'
+alias noproxy='unset http_proxy https_proxy'
+```
