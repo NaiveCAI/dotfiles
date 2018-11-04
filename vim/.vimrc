@@ -166,7 +166,7 @@ end
 
 "Change vertical split line style
 set fillchars+=vert:\|
-highlight VertSplit guibg=bg guifg=fg
+" highlight VertSplit guibg=bg guifg=fg
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

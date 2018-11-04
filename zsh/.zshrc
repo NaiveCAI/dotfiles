@@ -33,7 +33,7 @@ alias stree='open -a SourceTree .'
 alias gitup='open -a GitUp .'
 alias dockup="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 
-ZSH_THEME="ys"    # "robbyrussell || cloud || ys || agnoster || amuse || bullet-train"
+ZSH_THEME="agnoster"    # "robbyrussell || cloud || ys || agnoster || amuse || bullet-train"
 
 plugins=(git)
 plugins=(osx)
