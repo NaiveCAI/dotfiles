@@ -64,6 +64,7 @@ Plugin 'posva/vim-vue'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -534,12 +535,6 @@ nmap <C-]> :call FollowTag()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "other conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"for rabl syntax
-au BufRead,BufNewFile *.rabl setf ruby
-"for es6 syntax
-au BufRead,BufNewFile *.es6 setf javascript
-"for slim syntax
-au BufRead,BufNewFile *.slim setf haml
 "for jinja syntax
 au BufRead,BufNewFile *.j2 setf jinja "for ionic
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
