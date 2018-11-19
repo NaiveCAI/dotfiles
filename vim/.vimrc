@@ -420,6 +420,10 @@ let g:bookmark_no_default_key_mappings=1
 "highlight BookmarkAnnotationLine ctermbg=whatever ctermfg=whatever
 
 
+"conf for vim-jsx
+let g:jsx_ext_required=1
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for other key maps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
