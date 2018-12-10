@@ -51,7 +51,6 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'mbbill/undotree'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
@@ -65,6 +64,13 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
 
 call vundle#end()
 
@@ -283,8 +289,8 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 
 "conf for YCM
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_autoclose_preview_window_after_completion=1
+"let g:ycm_autoclose_preview_window_after_insertion=1
+"let g:ycm_autoclose_preview_window_after_completion=1
 
 
 "conf for js-libraries-syntax
@@ -323,7 +329,7 @@ let g:limelight_eop='\ze\n^\s'
 
 
 "conf for deoplete
-"let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 
 "conf for Ultisnips
