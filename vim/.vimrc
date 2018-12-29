@@ -64,13 +64,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plugin 'Shougo/deoplete.nvim'
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 
