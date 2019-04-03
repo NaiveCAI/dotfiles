@@ -64,6 +64,7 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
+Plugin 'chemzqm/wxapp.vim'
 
 call vundle#end()
 
