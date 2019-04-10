@@ -122,9 +122,8 @@ set wildmode=longest,list:longest
 set foldmethod=indent
 set nofoldenable
 
-set iskeyword=@,48-57,_,-,192-255
-set iskeyword+=@-@
-set updatetime=100
+set iskeyword=@,48-57,_,-,192-255,@-@,?-?,!-!,$-$
+set updatetime=500
 
 filetype indent on
 filetype plugin on
@@ -132,17 +131,10 @@ filetype plugin on
 "Specific configurations
 if has("gui_macvim")
   set transparency=3
-  set lines=50 columns=220
+  set lines=50 columns=200
   "set guifont=Source\ Code\ Pro:h12
-  if hostname == "TracyEkohe"
-    set lines=55 columns=220
-    set guifont=OperatorMono\ Nerd\ Font:h13
-    set linespace=2
-  elseif hostname == 'NaiveCAI'
-    set lines=50 columns=200
-    set guifont=OperatorMono\ Nerd\ Font:h11
-    set linespace=0
-  endif
+  set guifont=OperatorMono\ Nerd\ Font:h13
+  set linespace=2
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar

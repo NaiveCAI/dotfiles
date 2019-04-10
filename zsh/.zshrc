@@ -46,7 +46,7 @@ export PATH="/usr/local/sbin:$PATH"  # For homebrew
 if [[ -n $SSH_CONNECTION  ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='gvim'
 fi
 
 export PATH="$PATH:/usr/local/mysql/bin"
