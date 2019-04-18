@@ -123,7 +123,7 @@ set foldmethod=indent
 set nofoldenable
 
 set iskeyword=@,48-57,_,-,192-255,@-@,?-?,!-!,$-$
-set updatetime=500
+set updatetime=200
 
 filetype indent on
 filetype plugin on
@@ -174,7 +174,7 @@ let NERDTreeIgnore=['__pycache__[[dir]]', '\.pyc$[[file]]']
 "conf for CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_custom_ignore={
-      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|node_modules|.webassets-cache|__pycache__|public\/(assets|packs))$',
+      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|dist|node_modules|.webassets-cache|__pycache__|public\/(assets|packs))$',
       \ 'file': '\v\.(log|jpg|jpeg|png)$',
       \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -205,7 +205,7 @@ let g:ctrlsf_auto_focus = {
       \ "at" : "done",
       \ "duration_less_than": 4000
       \ }
-let g:ctrlsf_ignore_dir = ['bower_components', 'npm_modules', 'tmp', 'log', 'tags']
+let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp']
 let g:ctrlsf_context = '-B 6 -A 6'
 
 
@@ -229,6 +229,14 @@ let g:airline#extensions#tabline#enabled=0
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
 "let g:airline#extensions#syntastic#enabled=1
+" let g:airline_section_a       (mode, crypt, paste, spell, iminsert)
+let g:airline_section_b=''
+" let g:airline_section_c       (bufferline or filename)
+" let g:airline_section_gutter  (readonly, csv)
+let g:airline_section_x=''
+let g:airline_section_y=''
+" let g:airline_section_z=''
+let g:airline_skip_empty_sections=1
 
 
 "conf for syntastic
@@ -440,9 +448,9 @@ nmap mf :NERDTreeFind<cr>
 
 "for CtrlSF
 nmap <Leader>f :CtrlSF 
+nmap <Leader>fc <Plug>CtrlSFCwordPath
 nmap <Leader>ot :CtrlSFToggle<cr>
 nmap <Leader>of :CtrlSFFocus<cr>
-nmap <F3> <Plug>CtrlSFCwordExec
 nmap <F4> :!rspec % --no-color<cr>
 
 "for fugitive
@@ -507,6 +515,9 @@ noremap <silent> <F8> :<C-u>NextWordy<cr>
 xnoremap <silent> <F8> :<C-u>NextWordy<cr>
 inoremap <silent> <F8> <C-o>:NextWordy<cr>
 
+"for locate
+let g:locate_jump_to = 'stay'
+
 "for ctags
 function! FollowTag()
   if !exists("w:tagbrowse")
@@ -525,7 +536,7 @@ nmap <C-]> :call FollowTag()<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Gruvbox color theme
 "let g:gruvbox_contrast_dark='hard'
-"let g:gruvbox_contrast_light='hard'
+let g:gruvbox_contrast_light='hard'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
