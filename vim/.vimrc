@@ -135,12 +135,18 @@ if has("gui_macvim")
   "set guifont=Source\ Code\ Pro:h12
   set guifont=OperatorMono\ Nerd\ Font:h13
   set linespace=2
+  if hostname == 'NaiveCAI'
+    set lines=50 columns=200
+    set guifont=OperatorMono\ Nerd\ Font:h11
+    set linespace=0
+  endif
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
 endif
+
 
 if has("gui_vimr")
   "To keey consistent with the macvim's <C-6>
