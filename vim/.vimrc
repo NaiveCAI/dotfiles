@@ -443,7 +443,12 @@ nmap <Leader>t :Tab /
 nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
 nmap <Leader>sss :set syntax=
+nmap <Leader>l :L 
+nmap <Leader>lc :Lpurge<cr>
 nmap <F10> :%bd<cr>
+ " moving aroung in command mode
+ cnoremap <c-b> <left>
+ cnoremap <c-f> <right>
 
 "for macvim's sb screen bug
 nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
@@ -541,7 +546,7 @@ nmap <C-]> :call FollowTag()<cr>
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Gruvbox color theme
-"let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 
 
