@@ -448,7 +448,7 @@ nmap <Leader>lc :Lpurge<cr>
 nmap <F10> :%bd<cr>
  " moving aroung in command mode
  cnoremap <c-b> <left>
- cnoremap <c-f> <right>
+ cnoremap <c-d> <right>
 
 "for macvim's sb screen bug
 nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
