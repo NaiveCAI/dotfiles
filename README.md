@@ -43,6 +43,8 @@ brew install autojump
   brew install ack    // for ctrlsf and ack.vim
   brew install ctags
   brew install CMake  // for install YCM
+  sudo npm -g install instant-markdown-d // for vim-instant-markdown
+
 
   // For Ubuntu need those dependencies
   sudo apt-get update && sudo apt-get install build-essential
@@ -54,13 +56,13 @@ brew install autojump
   ```
 - Install GVIM
   ```
-  // enable python3 if use deoplete.nvim
-  brew install vim --with-python3 --without-python --with-override-system-vim
-  brew install macvim --with-python3 --without-python --with-override-system-vim
-
-  // enable lua with macvim if use YCM.
-  brew install macvim --with-cscope --with-lua --override-system-vim
+  // Need enable python3 if use deoplete.nvim
+  brew install vim --with-override-system-vim
+  brew install macvim --with-override-system-vim
   ```
+- Install NeoVim
+  - https://ricostacruz.com/til/neovim-with-python-on-osx
+
 #### Clone repos
 ```
 cd && git clone git@github.com:NaiveCAI/dotfiles.git
@@ -73,15 +75,23 @@ ln -sf ~/dotfiles/vim/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -sf ~/dotfiles/vim/change_vim_theme.sh ~/.vim/change_vim_theme
 
+# For neovim
+ln -s ~/dotfiles/nvim/ ~/.config/nvim
+
 ln -sf ~/dotfiles/lints/.eslintrc ~/.eslintrc
 ln -sf ~/dotfiles/lints/pep8 ~/.config/pep8
 ```
 
 ## Set up rails specific configurations
 ```
+# Use ctags
 gem install gem-ctags
 gem ctags
 ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)
+
+# Use ripper-tags for ruby code
+gem install ripper-tags
+ripper-tags -R --exclude=vendor --exclude=.git --exclude=log . $(bundle list --paths)
 
 ln -sf ~/dotfiles/ruby/.pryrc ~/.pryrc
 ```

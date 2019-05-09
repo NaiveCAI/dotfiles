@@ -30,6 +30,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'majutsushi/tagbar'
+Plugin 'tmm1/ripper-tags'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -50,6 +51,7 @@ Plugin 'wakatime/vim-wakatime'
 Plugin 'reedes/vim-wordy'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'jlanzarotta/bufexplorer'
@@ -125,7 +127,7 @@ set foldmethod=indent
 set nofoldenable
 
 set iskeyword=@,48-57,_,-,192-255,@-@,?-?,!-!,$-$
-set updatetime=200
+set updatetime=100
 
 filetype indent on
 filetype plugin on
@@ -356,7 +358,22 @@ let g:tagbar_type_ruby = {
         \ 'f:methods',
         \ 'F:singleton methods'
     \ ]
-\ }
+    \ }
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+        \ 'kinds'      : ['m:modules',
+        \ 'c:classes',
+        \ 'C:constants',
+        \ 'F:singleton methods',
+        \ 'f:methods',
+        \ 'a:aliases'],
+        \ 'kind2scope' : { 'c' : 'class',
+        \ 'm' : 'class' },
+        \ 'scope2kind' : { 'class' : 'c' },
+        \ 'ctagsbin'   : 'ripper-tags',
+        \ 'ctagsargs'  : ['-f', '-']
+        \ }
+endif
 
 
 "conf for wxapp
