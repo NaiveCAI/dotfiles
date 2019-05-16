@@ -69,6 +69,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'chemzqm/wxapp.vim'
+Plugin 'wavded/vim-stylus'
 
 call vundle#end()
 
@@ -566,8 +567,10 @@ nnoremap <Leader>fu :CtrlPFunky<Cr>
 "narrow the list down with a word under cursor
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
+"for vim-go
+let g:go_fmt_experimental = 0
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Gruvbox color theme
