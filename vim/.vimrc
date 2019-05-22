@@ -41,6 +41,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
@@ -63,7 +64,6 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'henrik/vim-ruby-runner'
 Plugin 'chr4/nginx.vim'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'mxw/vim-jsx'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -251,34 +251,6 @@ let g:airline_section_y=''
 let g:airline_skip_empty_sections=1
 
 
-"conf for syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_loc_list_height=5
-" let g:syntastic_check_on_open=1
-" let g:syntastic_check_on_wq=1
-" let g:syntastic_mode_map = { "mode": "passive" }
-
-" let g:syntastic_ruby_checkers = ['mri']
-" let g:syntastic_ruby_mri_exec='~/.rvm/rubies/ruby-2.3.0/bin/ruby'
-"using rubocop for syntax check instead
-"let g:syntastic_ruby_checkers=['rubocop']
-"let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.3.0/gems/rubocop-0.48.1/bin/rubocop'
-
-" let g:syntastic_javascript_checkers=['eslint']
-"using JSHint instead
-"let g:syntastic_javascript_checkers=['jsxhint']
-"let g:syntastic_javascript_jsxhint_exec='jsx-jshint-wrapper'
-
-" let g:syntastic_html_tidy_quiet_messages={ "level": "warnings" }
-"let g:syntastic_html_tidy_ignore_errors=[ '<input> proprietary attribute "role"', '<input> proprietary attribute "min"' ]
-" let g:syntastic_error_symbol="✘"
-" let g:syntastic_warning_symbol="▷"
-
-
 "conf for ale - Asynchronous Lint Engine
 let g:ale_open_list=1
 let g:ale_lint_on_enter=0
@@ -445,10 +417,6 @@ let g:bookmark_no_default_key_mappings=1
 "highlight BookmarkAnnotationSign ctermbg=whatever ctermfg=whatever
 "highlight BookmarkLine ctermbg=whatever ctermfg=whatever
 "highlight BookmarkAnnotationLine ctermbg=whatever ctermfg=whatever
-
-
-"conf for vim-jsx
-let g:jsx_ext_required=1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
