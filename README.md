@@ -25,6 +25,17 @@ plugins=(zsh-autosuggestions)
 brew install autojump
 ```
 
+## Set up tmux
+### Install
+```
+# Install Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+### Create links
+```
+ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
+```
+
 ## Set up vim
 - Python is prerequisite for three of my vim plugins.
   1. YouCompleteMe requires Vim compiled with Python (2.6+ or 3.3+) support.
