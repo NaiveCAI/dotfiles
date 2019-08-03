@@ -257,10 +257,15 @@ let g:ale_lint_on_enter=0
 let g:ale_set_loclist=0
 "let g:ale_set_quickfix=1
 let g:ale_lint_on_text_changed='never'
-let g:ale_linters={'ruby': ['ruby'], 'python': ['pylint']}
+let g:ale_linters={
+      \  'ruby': ['rubocop'],
+      \  'python': ['pylint'],
+      \  'javascript': ['eslint']
+      \}
 let b:ale_fixers = {'python': ['autopep8']}
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '❕'
+let g:ale_fix_on_save = 1
 let g:ale_lint_delay=50
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow

@@ -12,26 +12,14 @@ alias hs='history |grep'
 
 alias gc='git checkout'
 alias gs='git status'
-alias gpum='git pull origin master'
-alias gpsm='git push origin master'
-alias gc-='git checkout -'
 alias gmisc="git add . && git commit -m 'MISC - Update.'"
 alias gamm="git add . && git commit --amend --date='now'"
 
 alias rs='rails s'
 alias rc='rails c'
-alias rsb='rails s -b 0.0.0.0'
-alias rs1='rails s -p 3001'
-alias rs2='rails s -p 3002'
 alias rr='rake routes |grep'
 
-alias babel='./node_modules/babel-cli/bin/babel.js'
-alias babel-node='./node_modules/babel-cli/bin/babel-node.js'
-
-alias update_vim='cd ~/.vim && git submodule foreach git pull origin master'
 alias stree='open -a SourceTree .'
-alias gitup='open -a GitUp .'
-alias dockup="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 
 ZSH_THEME="amuse"    # "robbyrussell || cloud || ys || agnoster || amuse || bullet-train"
 
@@ -71,19 +59,6 @@ if [ $(($RANDOM%2)) -eq 0 ]; then
 else
   fortune | cowthink -d | lolcat
 fi
-
-#
-# Dynamically change vim theme
-# TODO: Refactor this function to a file -- .zsh_functions
-#
-# change_vim_theme() {
-#   # autoload +X change_vim_theme
-#   time=$(date +"%T")
-#   hour=${time:0:2}
-#   themes=(kalisi gruvbox hybrid solarized)
-#   seed=$(($RANDOM%4))
-#   zsh -c "change_vim_theme.sh $themes[$seed]"
-# }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
