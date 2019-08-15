@@ -408,11 +408,11 @@ let g:RubyRunner_keep_focus_key = '<Leader>R'
 
 "conf for vim-bookmark
 let g:bookmark_no_default_key_mappings=1
-"nmap <Leader><Leader> <Plug>BookmarkToggle
-"nmap <Leader>i <Plug>BookmarkAnnotate
-"nmap <Leader>a <Plug>BookmarkShowAll
-"nmap <Leader>j <Plug>BookmarkNext
-"nmap <Leader>k <Plug>BookmarkPrev
+nmap <Leader>mt <Plug>BookmarkToggle
+nmap <Leader>mi <Plug>BookmarkAnnotate
+nmap <Leader>ma <Plug>BookmarkShowAll
+nmap <Leader>mn <Plug>BookmarkNext
+nmap <Leader>mp <Plug>BookmarkPrev
 "nmap <Leader>c <Plug>BookmarkClear
 "nmap <Leader>x <Plug>BookmarkClearAll
 "nmap <Leader>kk <Plug>BookmarkMoveUp
