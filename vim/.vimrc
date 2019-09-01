@@ -70,6 +70,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'chemzqm/wxapp.vim'
 Plugin 'wavded/vim-stylus'
+Plugin 'vim-scripts/SQLUtilities'
 
 call vundle#end()
 
