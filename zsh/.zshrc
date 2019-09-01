@@ -54,12 +54,6 @@ export PATH="$PATH:/usr/local/lib/flutter/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-if [ $(($RANDOM%2)) -eq 0 ]; then
-  fortune | cowsay -w | lolcat
-else
-  fortune | cowthink -d | lolcat
-fi
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 export TERM=xterm-256color
