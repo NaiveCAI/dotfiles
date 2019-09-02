@@ -14,8 +14,6 @@ Plugin 'rking/ag.vim'
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'FelikZ/ctrlp-py-matcher'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'NaiveCAI/gruvbox'
@@ -205,7 +203,6 @@ endfunction
 if has("autocmd")
   autocmd VimEnter * :call SetupCtrlP()
 endif
-let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 
 "conf for ctrlsf
