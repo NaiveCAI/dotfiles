@@ -190,19 +190,23 @@ let g:ctrlp_custom_ignore={
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_open_multiple_files='3vjr'
 let g:ctrlp_show_hidden=1
-" CtrlP auto cache clearing.
-function! SetupCtrlP()
-  if exists("g:loaded_ctrlp") && g:loaded_ctrlp
-    augroup CtrlPExtension
-      autocmd!
-      autocmd FocusGained  * CtrlPClearCache
-      autocmd BufWritePost * CtrlPClearCache
-    augroup END
-  endif
-endfunction
-if has("autocmd")
-  autocmd VimEnter * :call SetupCtrlP()
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
+" CtrlP auto cache clearing.
+" function! SetupCtrlP()
+"   if exists("g:loaded_ctrlp") && g:loaded_ctrlp
+"     augroup CtrlPExtension
+"       autocmd!
+"       autocmd FocusGained  * CtrlPClearCache
+"       autocmd BufWritePost * CtrlPClearCache
+"     augroup END
+"   endif
+" endfunction
+" if has("autocmd")
+"   autocmd VimEnter * :call SetupCtrlP()
+" endif
 
 
 "conf for ctrlsf
