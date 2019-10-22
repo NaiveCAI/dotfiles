@@ -184,7 +184,7 @@ let NERDTreeIgnore=['__pycache__[[dir]]', '\.pyc$[[file]]']
 "conf for CtrlP
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_custom_ignore={
-      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|dist|node_modules|.webassets-cache|__pycache__|public\/(assets|packs))$',
+      \ 'dir':  '\v[\/](\.git|\.hg|\.svn|_site|dist|node_modules|.webassets-cache|.temp|__pycache__|public\/(assets|packs))$',
       \ 'file': '\v\.(log|jpg|jpeg|png)$',
       \ }
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
@@ -219,7 +219,7 @@ let g:ctrlsf_auto_focus = {
       \ "at" : "done",
       \ "duration_less_than": 4000
       \ }
-let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp']
+let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp', '.temp']
 let g:ctrlsf_context = '-B 6 -A 6'
 
 
