@@ -219,7 +219,7 @@ let g:ctrlsf_auto_focus = {
       \ "at" : "done",
       \ "duration_less_than": 4000
       \ }
-let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp', '.temp']
+let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp', '.temp', 'tags']
 let g:ctrlsf_context = '-B 6 -A 6'
 
 
