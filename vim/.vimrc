@@ -55,7 +55,6 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'slim-template/vim-slim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'mbbill/undotree'
-Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'terryma/vim-multiple-cursors'
@@ -66,7 +65,6 @@ Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'zxqfl/tabnine-vim'
 Plugin 'fatih/vim-go'
-Plugin 'chemzqm/wxapp.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
 
@@ -356,47 +354,6 @@ if executable('ripper-tags')
 endif
 
 
-"conf for wxapp
-let g:user_emmet_settings = {
-\ 'wxss': {
-\   'extends': 'css',
-\ },
-\ 'wxml': {
-\   'extends': 'html',
-\   'aliases': {
-\     'div': 'view',
-\     'span': 'text',
-\   },
-\  'default_attributes': {
-\     'block': [{'wx:for-items': '{{list}}','wx:for-item': '{{item}}'}],
-\     'navigator': [{'url': '', 'redirect': 'false'}],
-\     'scroll-view': [{'bindscroll': ''}],
-\     'swiper': [{'autoplay': 'false', 'current': '0'}],
-\     'icon': [{'type': 'success', 'size': '23'}],
-\     'progress': [{'precent': '0'}],
-\     'button': [{'size': 'default'}],
-\     'checkbox-group': [{'bindchange': ''}],
-\     'checkbox': [{'value': '', 'checked': ''}],
-\     'form': [{'bindsubmit': ''}],
-\     'input': [{'type': 'text'}],
-\     'label': [{'for': ''}],
-\     'picker': [{'bindchange': ''}],
-\     'radio-group': [{'bindchange': ''}],
-\     'radio': [{'checked': ''}],
-\     'switch': [{'checked': ''}],
-\     'slider': [{'value': ''}],
-\     'action-sheet': [{'bindchange': ''}],
-\     'modal': [{'title': ''}],
-\     'loading': [{'bindchange': ''}],
-\     'toast': [{'duration': '1500'}],
-\     'audio': [{'src': ''}],
-\     'video': [{'src': ''}],
-\     'image': [{'src': '', 'mode': 'scaleToFill'}],
-\   }
-\ },
-\}
-
-
 "conf for gitgutter
 "To customise your sign column's background color, first tell vim-gitgutter to leave it alone:
 let g:gitgutter_override_sign_column_highlight=0
@@ -556,9 +513,6 @@ let g:gruvbox_contrast_light='hard'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "other conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"for jinja syntax
-au BufRead,BufNewFile *.j2 setf jinja "for ionic
-let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-"]
 "close the netrw at vim startup
 let loaded_netrwPlugin=1
 "NERDTree at vim startup
