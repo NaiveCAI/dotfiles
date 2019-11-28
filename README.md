@@ -113,6 +113,35 @@ pip install yapf
 pip install pylint
 ```
 
+## Set up eslint
+- https://davidtranscend.com/blog/configure-eslint-prettier-vim/
+- https://medium.com/@jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9
+
+```
+npm i -g eslint
+npm i -g -D prettier eslint-plugin-prettier eslint-config-prettier
+
+# In .eslintrc
+
+{
+  "extends": [
+    "prettier",
+  ],
+  "rules": {
+    "prettier/prettier": "error",
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
+
+# In .vimrc
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+```
+
 ## Other useful plugin in terminal
 - brew install tree
 - brew install htop

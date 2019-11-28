@@ -46,10 +46,16 @@
   },
 
   "plugins": [
+    "react", "prettier"
     // e.g. "react" (must run `npm install eslint-plugin-react` first)
   ],
 
+  "extends": [
+    "prettier",
+  ]
+
   "rules": {
+    "prettier/prettier": "error",
     ////////// Possible Errors //////////
 
     "comma-dangle": 0,             // disallow trailing commas in object literals
