@@ -253,28 +253,23 @@ let g:airline_skip_empty_sections=1
 
 
 "conf for ale - Asynchronous Lint Engine
-let g:ale_open_list=1
-let g:ale_lint_on_enter=0
-let g:ale_set_loclist=0
-"let g:ale_set_quickfix=1
-let g:ale_lint_on_text_changed='never'
-let g:ale_linters={
-      \  'ruby': ['rubocop'],
-      \  'python': ['pylint'],
-      \  'javascript': ['eslint']
+let g:ale_linters = {
+      \ 'ruby': ['rubocop'],
+      \ 'python': ['pylint'],
+      \ 'javascript': ['eslint'],
+      \ 'jsx': ['eslint']
       \}
-let b:ale_fixers = {'python': ['autopep8']}
+let g:ale_fixers = {
+      \ 'ruby': ['rubocop'],
+      \ 'python': ['autopep8'],
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'jsx': ['prettier', 'eslint']
+      \}
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '❕'
-let g:ale_fix_on_save = 1
 let g:ale_lint_delay=50
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
-
-
-"conf for YCM
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_autoclose_preview_window_after_completion=1
 
 
 "conf for js-libraries-syntax
@@ -310,10 +305,6 @@ let g:limelight_eop='\ze\n^\s'
 "Highlighting priority (default: 10)
 "Set it to -1 not to overrule hlsearch
 "let g:limelight_priority=-1"
-
-
-"conf for deoplete
-let g:deoplete#enable_at_startup = 1
 
 
 "conf for Ultisnips
@@ -506,6 +497,7 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 "for vim-go
 let g:go_fmt_experimental = 0
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -526,4 +518,9 @@ let loaded_netrwPlugin=1
 augroup vimrc
   autocmd!
   autocmd BufWinEnter,Syntax * syn sync minlines=500 maxlines=500
+augroup END
+
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 augroup END

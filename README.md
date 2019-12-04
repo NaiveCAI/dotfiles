@@ -121,6 +121,9 @@ pip install pylint
 npm i -g eslint
 npm i -g -D prettier eslint-plugin-prettier eslint-config-prettier
 
+# Run in current project
+eslint --init
+
 # In .eslintrc
 
 {
