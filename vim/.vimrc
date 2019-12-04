@@ -67,6 +67,7 @@ Plugin 'zxqfl/tabnine-vim'
 Plugin 'fatih/vim-go'
 Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
 
@@ -473,6 +474,9 @@ noremap <C-S-Tab> :tabprev<CR>
 "for limelight
 nmap <Leader>hh :Limelight<cr>
 nmap <Leader>hf :Limelight!<cr>
+
+"for vim-indent-guides
+nmap <Leader>id :IndentGuidesToggle<cr>
 
 "for vim wordy
 noremap <silent> <F8> :<C-u>NextWordy<cr>
