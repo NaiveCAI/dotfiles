@@ -68,8 +68,8 @@ ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
 - Install GVIM
   ```
   // Need enable python3 if use deoplete.nvim
-  brew install vim --with-override-system-vim
-  brew install macvim --with-override-system-vim
+  brew install vim
+  brew install macvim
   ```
 - Install NeoVim
   - https://ricostacruz.com/til/neovim-with-python-on-osx
@@ -143,6 +143,24 @@ let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
+```
+
+## Config proxy
+```
+npm config set proxy http://username:password@host:port
+npm config set https-proxy http://username:password@host:port
+
+yarn config set proxy http://username:password@host:port
+yarn config set https-proxy http://username:password@host:port
+
+git config --global http.proxy http://username:password@host:port
+git config --global https.proxy http://username:password@host:port
+
+// Or in ~/.gitconfig like:
+[http]
+  proxy = http://username:password@host:port
+[https]
+  proxy = http://username:password@host:port
 ```
 
 ## Other useful plugin in terminal
