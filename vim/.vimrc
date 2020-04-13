@@ -134,12 +134,12 @@ filetype plugin on
 "Specific configurations
 if has("gui_macvim")
   set transparency=3
-  set lines=50 columns=200
+  set lines=50 columns=190
   "set guifont=Source\ Code\ Pro:h12
   set guifont=OperatorMono\ Nerd\ Font:h13
   set linespace=2
   if hostname == 'NaiveCAI'
-    set lines=50 columns=200
+    set lines=50 columns=190
     set guifont=OperatorMono\ Nerd\ Font:h11
     set linespace=0
   endif
@@ -524,4 +524,5 @@ augroup FiletypeGroup
   autocmd!
   au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   au BufNewFile,BufRead *.tsx set filetype=javascript.ts
+  au BufNewFile,BufRead *.es6 set filetype=javascript.ts
 augroup END
