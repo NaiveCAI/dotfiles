@@ -3,8 +3,6 @@ let hostname=substitute(system('hostname'), '\n', '', '')
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -68,12 +66,9 @@ Plugin 'fatih/vim-go'
 Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
-
-filetype plugin indent on
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -128,28 +123,24 @@ set nofoldenable
 set iskeyword=@,48-57,_,-,192-255,@-@,?-?,!-!,$-$
 set updatetime=100
 
-filetype indent on
-filetype plugin on
+filetype off
+filetype plugin indent on
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 
 "Specific configurations
 if has("gui_macvim")
   set transparency=3
-  set lines=50 columns=190
-  "set guifont=Source\ Code\ Pro:h12
-  set guifont=OperatorMono\ Nerd\ Font:h13
+  set lines=45 columns=162
+  set guifont=OperatorMono\ Nerd\ Font:h17
   set linespace=2
-  if hostname == 'NaiveCAI'
-    set lines=50 columns=190
-    set guifont=OperatorMono\ Nerd\ Font:h11
-    set linespace=0
-  endif
+
   "Hide toolbar and scrollbars in MacVim
   set guioptions-=m  "remove menu bar
   set guioptions-=T  "remove toolbar
   set guioptions-=r  "remove right-hand scroll bar
   set guioptions-=L  "remove left-hand scroll bar
 endif
-
 
 if has("gui_vimr")
   "To keey consistent with the macvim's <C-6>
@@ -262,12 +253,13 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'ruby': ['rubocop'],
       \ 'python': ['autopep8'],
-      \ 'javascript': ['prettier', 'eslint'],
-      \ 'jsx': ['prettier', 'eslint']
+      \ 'javascript': ['eslint'],
+      \ 'jsx': ['eslint']
       \}
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '❕'
 let g:ale_lint_delay=50
+let g:ale_fix_on_save=1
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
