@@ -209,7 +209,7 @@ let g:ctrlsf_auto_focus = {
       \ "at" : "done",
       \ "duration_less_than": 4000
       \ }
-let g:ctrlsf_ignore_dir = ['node_modules',  'dist', 'vendor', 'public', 'log', 'tmp', '.temp', 'tags']
+let g:ctrlsf_ignore_dir = ['node_modules', 'dist', 'public', 'log', 'tmp', '.temp', 'tags']
 let g:ctrlsf_context = '-B 6 -A 6'
 
 
@@ -248,18 +248,22 @@ let g:ale_linters = {
       \ 'ruby': ['rubocop'],
       \ 'python': ['pylint'],
       \ 'javascript': ['eslint'],
-      \ 'jsx': ['eslint']
+      \ 'jsx': ['eslint'],
+      \ 'css': ['stylelint'],
+      \ 'scss': ['stylelint']
       \}
 let g:ale_fixers = {
       \ 'ruby': ['rubocop'],
       \ 'python': ['autopep8'],
       \ 'javascript': ['eslint'],
-      \ 'jsx': ['eslint']
+      \ 'jsx': ['eslint'],
+      \ 'css': ['stylelint'],
+      \ 'scss': ['stylelint']
       \}
 let g:ale_sign_error = '❗️'
 let g:ale_sign_warning = '❕'
 let g:ale_lint_delay=50
-let g:ale_fix_on_save=1
+" let g:ale_fix_on_save=1
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
