@@ -67,6 +67,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
+Plugin 'pseewald/vim-anyfold'
 
 call vundle#end()
 
