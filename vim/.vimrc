@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
@@ -68,6 +68,7 @@ Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
 Plugin 'pseewald/vim-anyfold'
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()
 
@@ -210,7 +211,7 @@ let g:ctrlsf_auto_focus = {
       \ "at" : "done",
       \ "duration_less_than": 4000
       \ }
-let g:ctrlsf_ignore_dir = ['node_modules', 'dist', 'public', 'log', 'tmp', '.temp', 'tags']
+let g:ctrlsf_ignore_dir = ['node_modules', 'dist', 'public', 'log', 'tmp', '.temp', 'tags', '_build']
 let g:ctrlsf_context = '-B 6 -A 6'
 
 
