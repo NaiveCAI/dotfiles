@@ -224,6 +224,7 @@ let g:bufExplorerSortBy='mru'
 let g:bufExplorerFindActive=1
 let g:bufExplorerSplitRight=1     "Split right.
 let g:bufExplorerVertSize=30      "New split windows size set by Vim.
+let g:bufExplorerShowNoName=1     "Show No Name buffers.
 
 
 "conf for airline
