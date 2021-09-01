@@ -409,13 +409,7 @@ nmap <Leader>of :CtrlSFFocus<cr>
 nmap <F4> :!rspec % --no-color<cr>
 
 "for fugitive
-nmap <Leader>gpu :Gpull 
-nmap <Leader>gps :Gpush 
-nmap <Leader>gco :Gcommit 
-nmap <Leader>ga :Gwrite<cr>
-nmap <Leader>gb :Gblame<cr>
-nmap <Leader>gs :Gstatus<cr>
-nmap <Leader>gd :Gvdiff<cr>
+nmap <Leader>gb :Git blame<cr>
 
 "for highlightedyank
 map y <Plug>(highlightedyank)
