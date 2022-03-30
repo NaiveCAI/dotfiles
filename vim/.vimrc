@@ -255,7 +255,6 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
       \ 'typescript': ['eslint'],
-      \ 'typescriptreact': ['eslint'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint']
       \}
@@ -265,7 +264,6 @@ let g:ale_fixers = {
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
       \ 'typescript': ['eslint'],
-      \ 'typescriptreact': ['eslint'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint']
       \}
