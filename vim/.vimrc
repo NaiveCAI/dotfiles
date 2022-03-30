@@ -15,8 +15,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'NaiveCAI/gruvbox'
+Plugin 'sainnhe/everforest'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'junegunn/limelight.vim'
 Plugin 'mtth/locate.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Valloric/MatchTagAlways'
@@ -25,8 +25,6 @@ Plugin 'vim-scripts/ruby-matchit'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
-Plugin 'majutsushi/tagbar'
-Plugin 'tmm1/ripper-tags'
 Plugin 'SirVer/ultisnips'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -39,13 +37,13 @@ Plugin 'machakann/vim-highlightedyank'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
+Plugin 'stephpy/vim-yaml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-haml'
 Plugin 'wakatime/vim-wakatime'
-Plugin 'reedes/vim-wordy'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'plasticboy/vim-markdown'
@@ -62,13 +60,10 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'zxqfl/tabnine-vim'
-Plugin 'fatih/vim-go'
 Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
-Plugin 'pseewald/vim-anyfold'
-Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()
 
@@ -132,7 +127,7 @@ filetype plugin indent on
 
 "Specific configurations
 if has("gui_macvim")
-  set transparency=3
+  "set transparency=3
   set lines=45 columns=162
   set guifont=OperatorMono\ Nerd\ Font:h17
   set linespace=2
@@ -144,20 +139,27 @@ if has("gui_macvim")
   set guioptions-=L  "remove left-hand scroll bar
 endif
 
-if has("gui_vimr")
-  "To keey consistent with the macvim's <C-6>
-  noremap <C-6> <C-S-6>
-endif
+"conf for everforest color theme
+" Set contrast.
+" This configuration option should be placed before `colorscheme everforest`.
+" Available values: 'hard', 'medium'(default), 'soft'
+let g:everforest_background = 'medium'
+" For better performance
+let g:everforest_better_performance = 1
 
-if has("gui_macvim") || has("gui_vimr")
-  colorscheme gruvbox            "macvim_theme_theme
-  "let g:airline_theme='sierra'  "macvim_airline_theme
+if has("gui_macvim")
+  colorscheme everforest
+  let g:airline_theme='everforest'
   set termguicolors
   highlight Comment gui=italic
 else
   colorscheme gruvbox
   set fillchars+=vert:\|
 end
+
+if has('termguicolors')
+  set termguicolors
+endif
 
 "Change vertical split line style
 set fillchars+=vert:\|
@@ -252,6 +254,8 @@ let g:ale_linters = {
       \ 'python': ['pylint'],
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'typescriptreact': ['eslint'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint']
       \}
@@ -260,6 +264,8 @@ let g:ale_fixers = {
       \ 'python': ['autopep8'],
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
+      \ 'typescript': ['eslint'],
+      \ 'typescriptreact': ['eslint'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint']
       \}
@@ -286,63 +292,11 @@ autocmd BufReadPre *.js let b:javascript_lib_use_react=1
 "autocmd BufReadPre *.js let b:javascript_lib_use_angularuirouter=1
 
 
-"con for limelight
-"Color name (:help cterm-colors) or ANSI code
-let g:limelight_conceal_ctermfg='gray'
-let g:limelight_conceal_ctermfg=240
-"Color name (:help gui-colors) or RGB color
-let g:limelight_conceal_guifg='DarkGray'
-let g:limelight_conceal_guifg='#777777'
-"Default: 0.5
-let g:limelight_default_coefficient=0.7
-"Number of preceding/following paragraphs to include (default: 0)
-let g:limelight_paragraph_span=2
-"Beginning/end of paragraph
-"When there's no empty line between the paragraphs and each paragraph starts with indentation
-let g:limelight_bop='^\s'
-let g:limelight_eop='\ze\n^\s'
-"Highlighting priority (default: 10)
-"Set it to -1 not to overrule hlsearch
-"let g:limelight_priority=-1"
-
-
 "conf for Ultisnips
 let g:UltiSnipsExpandTrigger="<c-e>"
 let g:UltiSnipsEditSplit='vertical'
 "let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
-
-"conf for tagbar
-let g:tagbar_autofocus = 1
-
-
-"for ruby, delete if you do not need
-let g:tagbar_type_ruby = {
-    \ 'kinds' : [
-        \ 'm:modules',
-        \ 'c:classes',
-        \ 'd:describes',
-        \ 'C:contexts',
-        \ 'f:methods',
-        \ 'F:singleton methods'
-    \ ]
-    \ }
-if executable('ripper-tags')
-  let g:tagbar_type_ruby = {
-        \ 'kinds'      : ['m:modules',
-        \ 'c:classes',
-        \ 'C:constants',
-        \ 'F:singleton methods',
-        \ 'f:methods',
-        \ 'a:aliases'],
-        \ 'kind2scope' : { 'c' : 'class',
-        \ 'm' : 'class' },
-        \ 'scope2kind' : { 'class' : 'c' },
-        \ 'ctagsbin'   : 'ripper-tags',
-        \ 'ctagsargs'  : ['-f', '-']
-        \ }
-endif
 
 
 "conf for gitgutter
@@ -426,9 +380,6 @@ nmap <Leader>bgd :set background=dark<cr>
 nmap <Leader>rg :Rgenerate 
 nmap <Leader>rd :Rdestroy 
 
-"for tagbar
-nmap <Leader>tt :TagbarToggle<cr>
-
 "for undotree
 nmap <Leader>ou :UndotreeToggle<cr>
 
@@ -439,7 +390,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "for change window size manually in OS X
-if has("gui_vimr") || has("gui_macvim")
+if has("gui_macvim")
   nnoremap ¬ :vertical resize +6<cr>
   "nnoremap ¬ <C-W>>
   nnoremap ˙ :vertical resize -6<cr>
@@ -455,32 +406,12 @@ endif
 noremap <C-Tab> :tabnext<CR>
 noremap <C-S-Tab> :tabprev<CR>
 
-"for limelight
-nmap <Leader>hh :Limelight<cr>
-nmap <Leader>hf :Limelight!<cr>
-
 "for vim-indent-guides
 nmap <Leader>id :IndentGuidesToggle<cr>
-
-"for vim wordy
-noremap <silent> <F8> :<C-u>NextWordy<cr>
-xnoremap <silent> <F8> :<C-u>NextWordy<cr>
-inoremap <silent> <F8> <C-o>:NextWordy<cr>
 
 "for locate
 let g:locate_jump_to = 'stay'
 
-"for ctags
-function! FollowTag()
-  if !exists("w:tagbrowse")
-    vsplit
-    let w:tagbrowse=1
-  endif
-  execute "tag " . expand("<cword>")
-endfunction
-
-nmap <C-]> :call FollowTag()<cr>
-"nmap <C-]> :execute "vertical ptag " . expand("<cword>")<CR>
 
 "for ctrlp-funky
 nnoremap <Leader>fu :CtrlPFunky<Cr>
@@ -495,8 +426,8 @@ let g:go_fmt_experimental = 0
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Gruvbox color theme
-let g:gruvbox_contrast_dark='hard'
-let g:gruvbox_contrast_light='hard'
+" let g:gruvbox_contrast_dark='hard'
+" let g:gruvbox_contrast_light='hard'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
