@@ -139,17 +139,9 @@ if has("gui_macvim")
   set guioptions-=L  "remove left-hand scroll bar
 endif
 
-"conf for everforest color theme
-" Set contrast.
-" This configuration option should be placed before `colorscheme everforest`.
-" Available values: 'hard', 'medium'(default), 'soft'
-let g:everforest_background = 'medium'
-" For better performance
-let g:everforest_better_performance = 1
-
 if has("gui_macvim")
-  colorscheme everforest
-  let g:airline_theme='everforest'
+  colorscheme gruvbox
+  let g:airline_theme='gruvbox'
   set termguicolors
   highlight Comment gui=italic
 else
