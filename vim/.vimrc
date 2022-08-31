@@ -138,13 +138,13 @@ if has("gui_macvim")
   set guioptions-=L  "remove left-hand scroll bar
 endif
 
+colorscheme everforest
+let g:airline_theme='everforest'
+
 if has("gui_macvim")
-  colorscheme gruvbox
-  let g:airline_theme='gruvbox'
   set termguicolors
   highlight Comment gui=italic
 else
-  colorscheme gruvbox
   set fillchars+=vert:\|
 end
 
