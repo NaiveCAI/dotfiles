@@ -128,7 +128,7 @@ filetype plugin indent on
 if has("gui_macvim")
   "set transparency=3
   set lines=45 columns=162
-  set guifont=OperatorMono\ Nerd\ Font:h17
+  set guifont=OperatorMono\ Nerd\ Font:h15
   set linespace=2
 
   "Hide toolbar and scrollbars in MacVim
