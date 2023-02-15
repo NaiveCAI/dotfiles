@@ -208,6 +208,7 @@ let g:ctrlsf_auto_focus = {
       \ }
 let g:ctrlsf_ignore_dir = ['node_modules', 'dist', 'public', 'log', 'tmp', '.temp', 'tags', '_build']
 let g:ctrlsf_context = '-B 6 -A 6'
+let g:ctrlsf_backend = 'ag'
 
 
 "conf for ag
