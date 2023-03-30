@@ -14,14 +14,12 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'junegunn/goyo.vim'
-Plugin 'NaiveCAI/gruvbox'
 Plugin 'sainnhe/everforest'
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'mtth/locate.vim'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-scripts/ruby-matchit'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/ruby-matchit'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
@@ -36,13 +34,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'elzr/vim-json'
 Plugin 'stephpy/vim-yaml'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-haml'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'plasticboy/vim-markdown'
@@ -53,15 +51,13 @@ Plugin 'mbbill/undotree'
 Plugin 'mattn/emmet-vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'henrik/vim-ruby-runner'
 Plugin 'chr4/nginx.vim'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'MattesGroeger/vim-bookmarks'
 Plugin 'leafgarland/typescript-vim'
-Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
+Plugin 'jparise/vim-graphql'
 
 call vundle#end()
 
@@ -126,8 +122,8 @@ filetype plugin indent on
 "Specific configurations
 if has("gui_macvim")
   "set transparency=3
-  set lines=45 columns=162
-  set guifont=OperatorMono\ Nerd\ Font:h15
+  set lines=55 columns=220
+  set guifont=OperatorMono\ Nerd\ Font:h13
   set linespace=2
 
   "Hide toolbar and scrollbars in MacVim
@@ -224,13 +220,13 @@ let g:bufExplorerShowNoName=1     "Show No Name buffers.
 
 "conf for airline
 let g:airline#extensions#bufferline#enabled=1
-let g:airline#extensions#branch#enabled=1
+" let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#ale#enabled=1
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=0
+let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
-"let g:airline#extensions#syntastic#enabled=1
+" let g:airline#extensions#syntastic#enabled=1
 " let g:airline_section_a       (mode, crypt, paste, spell, iminsert)
 let g:airline_section_b=''
 " let g:airline_section_c       (bufferline or filename)
@@ -296,11 +292,6 @@ let g:gitgutter_override_sign_column_highlight=0
 " highlight clear SignColumn
 
 
-"conf for vim-ruby-runner
-let g:RubyRunner_key = '<Leader>r'
-let g:RubyRunner_keep_focus_key = '<Leader>R'
-
-
 "conf for vim-bookmark
 let g:bookmark_no_default_key_mappings=1
 nmap <Leader>mt <Plug>BookmarkToggle
@@ -327,7 +318,6 @@ vnoremap , <ESC>
 imap <Tab> <C-X>
 nmap <Leader>w :bd<cr>
 nmap <Leader>z :nohl<cr>
-nmap <Leader>ss :so ~/.vimrc<cr>
 nmap <Leader>t :Tab /
 nmap <Leader>ssp :set paste<cr>
 nmap <Leader>nsp :set nopaste<cr>
@@ -335,9 +325,9 @@ nmap <Leader>sss :set syntax=
 nmap <Leader>l :L 
 nmap <Leader>lc :Lpurge<cr>
 nmap <F10> :%bd<cr>
- " moving aroung in command mode
- cnoremap <c-b> <left>
- cnoremap <c-d> <right>
+" moving aroung in command mode
+cnoremap <c-b> <left>
+cnoremap <c-d> <right>
 
 "for macvim's sb screen bug
 nmap <Leader>fk <C-W><S-H> <C-W><S-L> <C-W><S-H>
@@ -381,17 +371,15 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "for change window size manually in OS X
-if has("gui_macvim")
-  nnoremap ¬ :vertical resize +6<cr>
-  "nnoremap ¬ <C-W>>
-  nnoremap ˙ :vertical resize -6<cr>
-  "nnoremap ˙ <c-w><
-  nnoremap ˚ :resize +6<cr>
-  "nnoremap ˚ <C-W>+
-  nnoremap ∆ :resize -6<cr>
-  "nnoremap ∆ <C-W>-
-  nnoremap ≠ <C-W>=
-endif
+nnoremap ¬ :vertical resize +6<cr>
+"nnoremap ¬ <C-W>>
+nnoremap ˙ :vertical resize -6<cr>
+"nnoremap ˙ <c-w><
+nnoremap ˚ :resize +6<cr>
+"nnoremap ˚ <C-W>+
+nnoremap ∆ :resize -6<cr>
+"nnoremap ∆ <C-W>-
+nnoremap ≠ <C-W>=
 
 "use CTRL and TAB to switch between tabs.
 noremap <C-Tab> :tabnext<CR>
@@ -402,15 +390,6 @@ nmap <Leader>id :IndentGuidesToggle<cr>
 
 "for locate
 let g:locate_jump_to = 'stay'
-
-
-"for ctrlp-funky
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-"narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-
-"for vim-go
-let g:go_fmt_experimental = 0
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
