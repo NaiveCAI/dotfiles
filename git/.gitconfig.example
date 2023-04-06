@@ -5,8 +5,6 @@
 	email = 835010809@qq.com
 	name = NaiveCAI
 [alias]
-  co = checkout
-  com = commit
   lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   hs = log --graph --pretty=format:'%Cred%h%Creset%d -%Cblue %s%Creset %Cgreen(%ar) %Cblue<%an>%Creset' --abbrev-commit --date=relative
   type = cat-file -t
