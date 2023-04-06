@@ -219,11 +219,11 @@ let g:bufExplorerShowNoName=1     "Show No Name buffers.
 
 
 "conf for airline
-let g:airline#extensions#bufferline#enabled=1
+" let g:airline#extensions#bufferline#enabled=1
+" let g:airline#extensions#tabline#enabled=1
 " let g:airline#extensions#branch#enabled=1
 let g:airline#extensions#ale#enabled=1
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#left_sep=' '
 "let g:airline#extensions#tabline#left_alt_sep='|'
 " let g:airline#extensions#syntastic#enabled=1
