@@ -58,6 +58,7 @@ Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
 Plugin 'jparise/vim-graphql'
+Plugin 'Exafunction/codeium.vim'
 
 call vundle#end()
 
@@ -133,8 +134,8 @@ if has("gui_macvim")
   set guioptions-=L  "remove left-hand scroll bar
 endif
 
-colorscheme gruvbox
-let g:airline_theme='gruvbox'
+colorscheme everforest
+let g:airline_theme='everforest'
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -397,13 +398,15 @@ nmap <Leader>id :IndentGuidesToggle<cr>
 "for locate
 let g:locate_jump_to = 'stay'
 
+"for codeium
+let g:codeium_idle_delay = 75
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "color themes conf
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "conf for Gruvbox color theme
-" let g:gruvbox_contrast_dark='hard'
-" let g:gruvbox_contrast_light='hard'
+" let g:gruvbox_contrast_dark='medium'
+" let g:gruvbox_contrast_light='medium'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
