@@ -30,6 +30,10 @@ brew install autojump
 ```
 # Install Tmux Plugin Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install yq on server(if using joshmedeski/tmux-nerd-font-window-name)
+sudo wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq
+sudo chmod +x /usr/bin/yq
 ```
 ### Create links
 ```

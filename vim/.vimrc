@@ -58,7 +58,6 @@ Plugin 'vim-scripts/SQLUtilities'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/csv.vim'
 Plugin 'jparise/vim-graphql'
-Plugin 'Exafunction/codeium.vim'
 
 call vundle#end()
 
